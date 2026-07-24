@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Follow Check — byselvi</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --pink: #f4a0cf;
+            --pink-soft: #f8c4df;
+            --red: #9d1426;
+            --red-dark: #76101c;
+            --blue: #aebdc0;
+            --green: #c6ff62;
+            --cream: #fff9f4;
+            --black: #0b0b0b;
+            --white: #fffdfb;
+            --line: rgba(157, 20, 38, 0.55);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--pink);
+            color: var(--red);
+            font-family: Georgia, "Times New Roman", serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* HEADER */
+
+        .site-header {
+            padding: 16px 24px 12px;
+            border-bottom: 1px solid var(--red);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(244, 160, 207, 0.96);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .mini-link {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.3px;
+            text-decoration: none;
+            width: fit-content;
+        }
+
+        .mini-link:hover {
+            text-decoration: underline;
+        }
+
+        .logo {
+            font-family: "Snell Roundhand", "Brush Script MT", cursive;
+            font-size: clamp(38px, 5vw, 58px);
+            color: var(--red);
+            line-height: 0.85;
+            transform: rotate(-4deg);
+            font-weight: 400;
+        }
+
+        .header-right {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 74vh;
+            padding: 65px 24px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--red);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(58px, 10vw, 132px);
+            line-height: 0.84;
+            letter-spacing: -5px;
+            font-weight: 400;
+            color: var(--red-dark);
+        }
+
+        .hero h1 span {
+            display: block;
+        }
+
+        .scribble {
+            font-family: "Snell Roundhand", "Brush Script MT", cursive;
+            font-size: clamp(30px, 5vw, 58px);
+            color: var(--black);
+            transform: rotate(-5deg);
+            display: inline-block;
+            margin-top: 24px;
+        }
+
+        .hero-copy {
+            max-width: 600px;
+            margin: 28px auto 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #5e1822;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 30px;
+            background: var(--black);
+            color: var(--green);
+            border: none;
+            padding: 17px 36px;
+            border-radius: 999px;
+            font-family: "Snell Roundhand", "Brush Script MT", cursive;
+            font-size: 29px;
+            text-decoration: none;
+            transform: rotate(2deg);
+            transition: transform 0.2s ease;
+        }
+
+        .hero-button:hover {
+            transform: rotate(-2deg) scale(1.04);
+        }
+
+        .hero-sticker {
+            position: absolute;
+            border: 1px solid var(--red);
+            background: var(--cream);
+            padding: 12px 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            line-height: 1.4;
+            width: 160px;
+        }
+
+        .sticker-one {
+            top: 16%;
+            left: 5%;
+            transform: rotate(-8deg);
+        }
+
+        .sticker-two {
+            bottom: 13%;
+            right: 5%;
+            transform: rotate(7deg);
+        }
+
+        /* CHECKER */
+
+        .checker-section {
+            padding: 95px 24px;
+            background: var(--blue);
+            border-bottom: 1px solid var(--red);
+        }
+
+        .checker-shell {
+            max-width: 1060px;
+            margin: 0 auto;
+        }
+
+        .section-kicker {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: clamp(45px, 7vw, 84px);
+            font-weight: 400;
+            line-height: 0.95;
+            color: var(--red-dark);
+            max-width: 850px;
+        }
+
+        .section-note {
+            font-family: "Snell Roundhand", "Brush Script MT", cursive;
+            color: var(--black);
+            font-size: clamp(27px, 4vw, 44px);
+            transform: rotate(-3deg);
+            display: inline-block;
+            margin: 16px 0 40px;
+        }
+
+        .upload-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .upload-card {
+            min-height: 320px;
+            background: var(--pink);
+            border: 1.5px solid var(--red);
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            box-shadow: 8px 8px 0 var(--red);
+        }
+
+        .upload-card:nth-child(2) {
+            background: var(--cream);
+            transform: rotate(1deg);
+        }
+
+        .upload-index {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .upload-card h3 {
+            font-size: clamp(31px, 4vw, 48px);
+            font-weight: 400;
+            line-height: 1;
+            color: var(--red-dark);
+        }
+
+        .upload-card p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #4f3035;
+            margin-top: 16px;
+            max-width: 410px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .file-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            border: none;
+            background: var(--black);
+            color: var(--green);
+            border-radius: 999px;
+            padding: 14px 25px;
+            font-family: "Snell Roundhand", "Brush Script MT", cursive;
+            font-size: 25px;
+            cursor: pointer;
+            transition: transform 0.18s ease;
+        }
+
+        .file-button:hover {
+            transform: rotate(-2deg) scale(1.03);
+        }
+
+        .file-status {
+            margin-top: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            min-height: 18px;
+            color: #3e3838;
+        }
+
+        .file-status.good {
+            font-weight: 700;
+            color: #173815;
+        }
+
+        .file-status.bad {
+            color: #8b1423;
+            font-weight: 700;
+        }
+
+        .compare-row {
+            margin-top: 45px;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .compare-button {
+            border: none;
+            background: var(--red);
+            color: var(--pink);
+            min-width: 240px;
+            min-height: 85px;
+            border-radius: 50%;
+            padding: 18px 42px;
+            font-family: "Snell Roundhand", "Brush Script MT", cursive;
+            font-size: 37px;
+            transform: rotate(-2deg);
+            transition: transform 0.2s ease;
+        }
+
+        .compare-button:hover {
+            transform: rotate(2deg) scale(1.04);
+        }
+
+        .privacy-line {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            line-height: 1.5;
+            max-width: 380px;
+            color: #425054;
+        }
+
+        /* LOADING */
+
+        .loading-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--pink);
+            z-index: 999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .loading-overlay.show {
+            display: flex;
+        }
+
+        .loading-box {
+            max-width: 650px;
+        }
+
+        .loading-box h2 {
+            font-size: clamp(45px, 8vw, 85px);
+            font-weight: 400;
+            line-height: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .loading-box p {
+            font-family: "Snell Roundhand", "Brush Script MT", cursive;
+            font-size: 36px;
+            color: var(--black);
+        }
+
+        /* RESULTS */
+
+        .results-section {
+            display: none;
+            padding: 90px 24px 100px;
+            background: var(--pink);
+        }
+
+        .results-section.show {
+            display: block;
+        }
+
+        .results-shell {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .results-header {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 40px;
+            align-items: end;
+            margin-bottom: 45px;
+        }
+
+        .results-header h2 {
+            font-size: clamp(58px, 9vw, 112px);
+            font-weight: 400;
+            line-height: 0.85;
+            color: var(--red-dark);
+        }
+
+        .results-comment {
+            font-family: "Snell Roundhand", "Brush Script MT", cursive;
+            font-size: clamp(29px, 4vw, 46px);
+            color: var(--black);
+            transform: rotate(-4deg);
+            text-align: right;
+        }
+
+        .stats-grid {
+            border-top: 1px solid var(--red);
+            border-bottom: 1px solid var(--red);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-bottom: 42px;
+        }
+
+        .stat-card {
+            padding: 28px 18px;
+            border-right: 1px solid var(--red);
+            text-align: center;
+        }
+
+        .stat-card:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: clamp(48px, 7vw, 82px);
+            color: var(--black);
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .stat-label {
+            display: block;
+            margin-top: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tab-button,
+        .utility-button,
+        .new-check-button {
+            border: 1px solid var(--red);
+            background: transparent;
+            color: var(--red);
+            border-radius: 999px;
+            padding: 10px 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            transition: 0.15s ease;
+        }
+
+        .tab-button:hover,
+        .utility-button:hover,
+        .new-check-button:hover,
+        .tab-button.active {
+            background: var(--red);
+            color: var(--pink);
+        }
+
+        .utility-controls {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .list-card {
+            border: 1px solid var(--red);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .list-header {
+            padding: 20px 22px;
+            border-bottom: 1px solid var(--red);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .list-header h3 {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 400;
+            color: var(--red-dark);
+        }
+
+        .search-input {
+            width: min(280px, 100%);
+            border: none;
+            border-bottom: 1px solid var(--red);
+            background: transparent;
+            outline: none;
+            padding: 8px 2px;
+            color: var(--red-dark);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .username-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .user-row {
+            border-right: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            padding: 15px 18px;
+            min-width: 0;
+        }
+
+        .user-row:nth-child(3n) {
+            border-right: none;
+        }
+
+        .user-link {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            word-break: break-word;
+        }
+
+        .user-link:hover {
+            text-decoration: underline;
+        }
+
+        .empty-state {
+            grid-column: 1 / -1;
+            padding: 60px 20px;
+            text-align: center;
+            font-family: "Snell Roundhand", "Brush Script MT", cursive;
+            font-size: 34px;
+            color: var(--black);
+        }
+
+        .bottom-actions {
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .micro-note {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            color: #60333b;
+        }
+
+        /* HOW IT WORKS */
+
+        .info-section {
+            padding: 90px 24px;
+            background: var(--cream);
+            border-top: 1px solid var(--red);
+            border-bottom: 1px solid var(--red);
+        }
+
+        .info-shell {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .info-shell h2 {
+            font-size: clamp(46px, 7vw, 78px);
+            font-weight: 400;
+            margin-bottom: 35px;
+            color: var(--red-dark);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid var(--red);
+            border-left: 1px solid var(--red);
+        }
+
+        .step {
+            padding: 28px;
+            border-right: 1px solid var(--red);
+            border-bottom: 1px solid var(--red);
+        }
+
+        .step-number {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .step h3 {
+            font-size: 27px;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #57363b;
+        }
+
+        /* PRIVACY */
+
+        .privacy-section {
+            padding: 75px 24px;
+            background: var(--black);
+            color: var(--green);
+        }
+
+        .privacy-shell {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .privacy-shell h2 {
+            font-size: clamp(42px, 6vw, 68px);
+            font-weight: 400;
+            margin-bottom: 22px;
+        }
+
+        .privacy-shell p {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            max-width: 750px;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            padding: 25px 24px 35px;
+            text-align: center;
+            border-top: 1px solid var(--red);
+            background: var(--pink);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+        }
+
+        .footer strong {
+            font-family: "Snell Roundhand", "Brush Script MT", cursive;
+            font-size: 25px;
+            font-weight: 400;
+            margin-left: 5px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+            .header-inner {
+                grid-template-columns: 1fr auto;
+            }
+
+            .header-left {
+                display: none;
+            }
+
+            .header-right {
+                gap: 12px;
+            }
+
+            .hero {
+                min-height: 65vh;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero-sticker {
+                display: none;
+            }
+
+            .upload-grid,
+            .results-header,
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .upload-card:nth-child(2) {
+                transform: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-card {
+                border-right: none;
+                border-bottom: 1px solid var(--red);
+            }
+
+            .stat-card:last-child {
+                border-bottom: none;
+            }
+
+            .username-list {
+                grid-template-columns: 1fr;
+            }
+
+            .user-row,
+            .user-row:nth-child(3n) {
+                border-right: none;
+            }
+
+            .results-comment {
+                text-align: left;
+            }
+
+            .steps {
+                border-top: 1px solid var(--red);
+            }
+
+            .step {
+                border-left: 1px solid var(--red);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .site-header {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .header-right .mini-link:last-child {
+                display: none;
+            }
+
+            .hero,
+            .checker-section,
+            .results-section,
+            .info-section {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .upload-card {
+                padding: 22px;
+            }
+
+            .compare-button {
+                width: 100%;
+            }
+
+            .compare-row {
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-left">
+                <a class="mini-link" href="#how">How it works</a>
+            </div>
+
+            <div class="logo">byselvi</div>
+
+            <div class="header-right">
+                <a class="mini-link" href="#checker">Check account</a>
+                <a class="mini-link" href="#privacy">Privacy</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-sticker sticker-one">
+            highly important internet research
+        </div>
+
+        <div class="hero-sticker sticker-two">
+            no login.<br>
+            no password.<br>
+            no weird app.
+        </div>
+
+        <div class="hero-inner">
+            <div class="eyebrow">an unnecessarily necessary instagram tool</div>
+
+            <h1>
+                <span>WHO ACTUALLY</span>
+                <span>FOLLOWS YOU</span>
+                <span>BACK?</span>
+            </h1>
+
+            <div class="scribble">
+                because apparently we have to investigate this ourselves.
+            </div>
+
+            <p class="hero-copy">
+                Upload your Instagram followers and following export files.
+                I’ll sort out the mutuals, the one-sided situations,
+                and the people who mysteriously forgot to follow you back.
+            </p>
+
+            <a href="#checker" class="hero-button">
+                check my account ♡
+            </a>
+        </div>
+    </section>
+
+
+    <section id="checker" class="checker-section">
+        <div class="checker-shell">
+
+            <div class="section-kicker">01 / the investigation</div>
+
+            <h2 class="section-title">
+                Drop the evidence.
+            </h2>
+
+            <div class="section-note">
+                two files. one mildly devastating answer.
+            </div>
+
+            <div class="upload-grid">
+
+                <article class="upload-card">
+                    <div>
+                        <div class="upload-index">file 01 / followers</div>
+
+                        <h3>Your followers</h3>
+
+                        <p>
+                            Choose the Instagram export file normally called
+                            <strong>followers_1.html</strong>.
+                        </p>
+                    </div>
+
+                    <div>
+                        <label class="file-button" for="followersFile">
+                            choose followers ♡
+                        </label>
+
+                        <input id="followersFile" type="file" accept=".html,.htm,text/html" />
+
+                        <div id="followersStatus" class="file-status">
+                            waiting for evidence...
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="upload-card">
+                    <div>
+                        <div class="upload-index">file 02 / following</div>
+
+                        <h3>Your following</h3>
+
+                        <p>
+                            Choose the Instagram export file normally called
+                            <strong>following.html</strong>.
+                        </p>
+                    </div>
+
+                    <div>
+                        <label class="file-button" for="followingFile">
+                            choose following ♡
+                        </label>
+
+                        <input id="followingFile" type="file" accept=".html,.htm,text/html" />
+
+                        <div id="followingStatus" class="file-status">
+                            waiting for evidence...
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+
+            <div class="compare-row">
+                <button id="compareButton" class="compare-button">
+                    investigate
+                </button>
+
+                <div class="privacy-line">
+                    Everything is processed inside your browser.
+                    Your files are not uploaded anywhere.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-box">
+            <h2>one second...</h2>
+            <p>investigating your questionable social decisions.</p>
+        </div>
+    </div>
+
+
+    <section id="resultsSection" class="results-section">
+        <div class="results-shell">
+
+            <div class="results-header">
+                <h2>THE DAMAGE.</h2>
+
+                <div id="resultsComment" class="results-comment">
+                    well. this is interesting.
+                </div>
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span id="notBackCount" class="stat-number">0</span>
+                    <span class="stat-label">not following you back</span>
+                </div>
+
+                <div class="stat-card">
+                    <span id="dontFollowCount" class="stat-number">0</span>
+                    <span class="stat-label">you don't follow back</span>
+                </div>
+
+                <div class="stat-card">
+                    <span id="mutualCount" class="stat-number">0</span>
+                    <span class="stat-label">mutuals</span>
+                </div>
+
+            </div>
+
+
+            <div class="controls">
+
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="notBack">
+                        not following back
+                    </button>
+
+                    <button class="tab-button" data-tab="dontFollow">
+                        you don't follow
+                    </button>
+
+                    <button class="tab-button" data-tab="mutuals">
+                        mutuals
+                    </button>
+                </div>
+
+
+                <div class="utility-controls">
+
+                    <button id="sortButton" class="utility-button">
+                        sort A–Z
+                    </button>
+
+                    <button id="copyButton" class="utility-button">
+                        copy list
+                    </button>
+
+                    <button id="downloadButton" class="utility-button">
+                        download list
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="list-card">
+
+                <div class="list-header">
+                    <h3 id="listTitle">
+                        Not following you back
+                    </h3>
+
+                    <input id="searchInput" class="search-input" type="text" placeholder="search username..." />
+                </div>
+
+                <div id="usernameList" class="username-list"></div>
+
+            </div>
+
+
+            <div class="bottom-actions">
+                <button id="newCheckButton" class="new-check-button">
+                    start a new check
+                </button>
+
+                <div class="micro-note">
+                    usernames open directly on Instagram ↗
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="how" class="info-section">
+        <div class="info-shell">
+
+            <div class="section-kicker">02 / how it works</div>
+
+            <h2>
+                Instagram gave you the files.
+                I make them readable.
+            </h2>
+
+            <div class="steps">
+
+                <article class="step">
+                    <div class="step-number">01</div>
+                    <h3>Download your data</h3>
+                    <p>
+                        Request your Followers and Following information
+                        from Instagram and save the export to your device.
+                    </p>
+                </article>
+
+                <article class="step">
+                    <div class="step-number">02</div>
+                    <h3>Upload both files</h3>
+                    <p>
+                        Choose your followers file and your following file.
+                        No Instagram login is needed here.
+                    </p>
+                </article>
+
+                <article class="step">
+                    <div class="step-number">03</div>
+                    <h3>See the situation</h3>
+                    <p>
+                        Search, copy, download or open usernames directly
+                        from the results.
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="privacy" class="privacy-section">
+        <div class="privacy-shell">
+            <h2>Your stalking remains private.</h2>
+
+            <p>
+                This checker runs locally in your browser.
+                The files you choose are read on your own device
+                and are not sent to a server by this page.
+                No Instagram password or login is required.
+            </p>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        made with questionable priorities by
+        <strong>byselvi</strong>
+    </footer>
+
+
+    <script>
+        let followers = new Set();
+        let following = new Set();
+
+        let results = {
+            notBack: [],
+            dontFollow: [],
+            mutuals: []
+        };
+
+        let activeTab = "notBack";
+        let ascending = true;
+
+
+        function cleanUsername(value) {
+            return value
+                .trim()
+                .replace(/^@/, "")
+                .replace(/\/+$/, "")
+                .toLowerCase();
+        }
+
+
+        function validUsername(username) {
+            return /^[a-z0-9._]+$/i.test(username);
+        }
+
+
+        function extractUsernames(htmlText) {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlText, "text/html");
+
+            const found = new Set();
+
+            doc.querySelectorAll("a[href]").forEach(link => {
+                const href = link.getAttribute("href") || "";
+                let username = "";
+
+                try {
+                    const decoded = decodeURIComponent(href);
+
+                    let match = decoded.match(
+                        /instagram\.com\/_u\/([A-Za-z0-9._]+)/i
+                    );
+
+                    if (!match) {
+                        match = decoded.match(
+                            /instagram\.com\/([A-Za-z0-9._]+)/i
+                        );
+                    }
+
+                    if (match) {
+                        username = cleanUsername(match[1]);
+                    }
+                } catch (error) {
+                    // ignore malformed links
+                }
+
+                if (!username) {
+                    const text = cleanUsername(link.textContent || "");
+
+                    if (
+                        text &&
+                        validUsername(text) &&
+                        !text.includes("instagram")
+                    ) {
+                        username = text;
+                    }
+                }
+
+                if (
+                    username &&
+                    validUsername(username) &&
+                    ![
+                        "accounts",
+                        "about",
+                        "developer",
+                        "explore",
+                        "direct",
+                        "reels",
+                        "stories",
+                        "_u"
+                    ].includes(username)
+                ) {
+                    found.add(username);
+                }
+            });
+
+
+            doc.querySelectorAll("h2").forEach(heading => {
+                const possible = cleanUsername(
+                    heading.textContent || ""
+                );
+
+                if (
+                    possible &&
+                    validUsername(possible) &&
+                    possible !== "following" &&
+                    possible !== "followers"
+                ) {
+                    found.add(possible);
+                }
+            });
+
+            return found;
+        }
+
+
+        async function handleFile(file, type) {
+            if (!file) return;
+
+            const status =
+                document.getElementById(
+                    type === "followers"
+                        ? "followersStatus"
+                        : "followingStatus"
+                );
+
+            try {
+                const text = await file.text();
+                const names = extractUsernames(text);
+
+                if (!names.size) {
+                    status.textContent =
+                        "hmm... that doesn't look like the right Instagram file ♡";
+
+                    status.classList.remove("good");
+                    status.classList.add("bad");
+
+                    return;
+                }
+
+                if (type === "followers") {
+                    followers = names;
+                } else {
+                    following = names;
+                }
+
+                status.textContent =
+                    `✓ ${names.size.toLocaleString()} usernames detected`;
+
+                status.classList.remove("bad");
+                status.classList.add("good");
+
+            } catch (error) {
+                status.textContent =
+                    "couldn't read that file — try the Instagram HTML export ♡";
+
+                status.classList.remove("good");
+                status.classList.add("bad");
+            }
+        }
+
+
+        document
+            .getElementById("followersFile")
+            .addEventListener("change", event => {
+                handleFile(
+                    event.target.files[0],
+                    "followers"
+                );
+            });
+
+
+        document
+            .getElementById("followingFile")
+            .addEventListener("change", event => {
+                handleFile(
+                    event.target.files[0],
+                    "following"
+                );
+            });
+
+
+        function compareLists() {
+            if (!followers.size || !following.size) {
+                alert(
+                    "Upload both your followers and following files first ♡"
+                );
+
+                return;
+            }
+
+            const notBack =
+                [...following].filter(
+                    username => !followers.has(username)
+                );
+
+            const dontFollow =
+                [...followers].filter(
+                    username => !following.has(username)
+                );
+
+            const mutuals =
+                [...following].filter(
+                    username => followers.has(username)
+                );
+
+            results = {
+                notBack,
+                dontFollow,
+                mutuals
+            };
+
+            updateResultCounts();
+            updateResultsComment();
+
+            activeTab = "notBack";
+            ascending = true;
+
+            document.getElementById("sortButton")
+                .textContent = "sort A–Z";
+
+            document.getElementById("searchInput")
+                .value = "";
+
+            updateTabs();
+            renderList();
+
+            const overlay =
+                document.getElementById("loadingOverlay");
+
+            overlay.classList.add("show");
+
+            setTimeout(() => {
+                overlay.classList.remove("show");
+
+                const resultsSection =
+                    document.getElementById("resultsSection");
+
+                resultsSection.classList.add("show");
+
+                resultsSection.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }, 850);
+        }
+
+
+        document
+            .getElementById("compareButton")
+            .addEventListener("click", compareLists);
+
+
+        function updateResultCounts() {
+            document.getElementById("notBackCount")
+                .textContent =
+                results.notBack.length.toLocaleString();
+
+            document.getElementById("dontFollowCount")
+                .textContent =
+                results.dontFollow.length.toLocaleString();
+
+            document.getElementById("mutualCount")
+                .textContent =
+                results.mutuals.length.toLocaleString();
+        }
+
+
+        function updateResultsComment() {
+            const count = results.notBack.length;
+            let comment = "";
+
+            if (count === 0) {
+                comment =
+                    "suspiciously healthy social circle.";
+            } else if (count < 10) {
+                comment =
+                    "honestly? could be much worse.";
+            } else if (count < 50) {
+                comment =
+                    "a few conversations may be required.";
+            } else if (count < 150) {
+                comment =
+                    "we have some things to discuss.";
+            } else {
+                comment =
+                    "oh babe. sit down.";
+            }
+
+            document.getElementById("resultsComment")
+                .textContent = comment;
+        }
+
+
+        function updateTabs() {
+            document
+                .querySelectorAll(".tab-button")
+                .forEach(button => {
+                    button.classList.toggle(
+                        "active",
+                        button.dataset.tab === activeTab
+                    );
+                });
+        }
+
+
+        document
+            .querySelectorAll(".tab-button")
+            .forEach(button => {
+                button.addEventListener("click", () => {
+                    activeTab = button.dataset.tab;
+
+                    document.getElementById("searchInput")
+                        .value = "";
+
+                    updateTabs();
+                    renderList();
+                });
+            });
+
+
+        function getActiveList() {
+            let data = [...results[activeTab]];
+
+            data.sort((a, b) =>
+                ascending
+                    ? a.localeCompare(b)
+                    : b.localeCompare(a)
+            );
+
+            const search =
+                document.getElementById("searchInput")
+                    .value
+                    .trim()
+                    .toLowerCase();
+
+            if (search) {
+                data = data.filter(username =>
+                    username.includes(search)
+                );
+            }
+
+            return data;
+        }
+
+
+        function renderList() {
+            const list =
+                document.getElementById("usernameList");
+
+            const titles = {
+                notBack: "Not following you back",
+                dontFollow: "You don't follow back",
+                mutuals: "Mutuals"
+            };
+
+            document.getElementById("listTitle")
+                .textContent = titles[activeTab];
+
+            const data = getActiveList();
+
+            list.innerHTML = "";
+
+            if (!data.length) {
+                list.innerHTML =
+                    `<div class="empty-state">
+            nothing to report ♡
+          </div>`;
+
+                return;
+            }
+
+            data.forEach(username => {
+                const row =
+                    document.createElement("div");
+
+                row.className = "user-row";
+
+                const link =
+                    document.createElement("a");
+
+                link.className = "user-link";
+
+                link.href =
+                    `https://www.instagram.com/${encodeURIComponent(username)}/`;
+
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+
+                link.innerHTML =
+                    `<span>@${username}</span><span>↗</span>`;
+
+                row.appendChild(link);
+                list.appendChild(row);
+            });
+        }
+
+
+        document
+            .getElementById("searchInput")
+            .addEventListener(
+                "input",
+                renderList
+            );
+
+
+        document
+            .getElementById("sortButton")
+            .addEventListener("click", () => {
+                ascending = !ascending;
+
+                document.getElementById("sortButton")
+                    .textContent =
+                    ascending
+                        ? "sort A–Z"
+                        : "sort Z–A";
+
+                renderList();
+            });
+
+
+        document
+            .getElementById("copyButton")
+            .addEventListener("click", async () => {
+                const data = getActiveList();
+
+                if (!data.length) return;
+
+                const text = data
+                    .map(username => `@${username}`)
+                    .join("\n");
+
+                try {
+                    await navigator.clipboard.writeText(text);
+
+                    const button =
+                        document.getElementById("copyButton");
+
+                    const original =
+                        button.textContent;
+
+                    button.textContent = "copied ♡";
+
+                    setTimeout(() => {
+                        button.textContent = original;
+                    }, 1200);
+
+                } catch (error) {
+                    alert(
+                        "Your browser blocked automatic copying. Try the download button instead ♡"
+                    );
+                }
+            });
+
+
+        document
+            .getElementById("downloadButton")
+            .addEventListener("click", () => {
+                const data = getActiveList();
+
+                if (!data.length) return;
+
+                const text = data
+                    .map(username => `@${username}`)
+                    .join("\n");
+
+                const blob =
+                    new Blob(
+                        [text],
+                        { type: "text/plain;charset=utf-8" }
+                    );
+
+                const url =
+                    URL.createObjectURL(blob);
+
+                const link =
+                    document.createElement("a");
+
+                link.href = url;
+
+                link.download =
+                    `${activeTab}-byselvi.txt`;
+
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+
+                URL.revokeObjectURL(url);
+            });
+
+
+        document
+            .getElementById("newCheckButton")
+            .addEventListener("click", () => {
+                followers = new Set();
+                following = new Set();
+
+                results = {
+                    notBack: [],
+                    dontFollow: [],
+                    mutuals: []
+                };
+
+                document.getElementById("followersFile")
+                    .value = "";
+
+                document.getElementById("followingFile")
+                    .value = "";
+
+                const followersStatus =
+                    document.getElementById("followersStatus");
+
+                const followingStatus =
+                    document.getElementById("followingStatus");
+
+                followersStatus.textContent =
+                    "waiting for evidence...";
+
+                followingStatus.textContent =
+                    "waiting for evidence...";
+
+                followersStatus.className =
+                    "file-status";
+
+                followingStatus.className =
+                    "file-status";
+
+                document.getElementById("resultsSection")
+                    .classList.remove("show");
+
+                document.getElementById("checker")
+                    .scrollIntoView({
+                        behavior: "smooth"
+                    });
+            });
+
+    </script>
+
+</body>
+
+</html>
