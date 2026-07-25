@@ -23,7 +23,7 @@
             --green: #c6ff62;
             --cream: #fff9f4;
             --black: #0b0b0b;
-            --line: rgba(157, 20, 38, 0.42);
+            --line: rgba(157, 20, 38, 0.45);
         }
 
         html {
@@ -54,9 +54,9 @@
         }
 
 
-        /* ==========================
+        /* =========================
            HEADER
-        ========================== */
+        ========================= */
 
         .site-header {
             position: sticky;
@@ -116,9 +116,9 @@
         }
 
 
-        /* ==========================
+        /* =========================
            HERO
-        ========================== */
+        ========================= */
 
         .hero {
             min-height: 74vh;
@@ -253,9 +253,9 @@
         }
 
 
-        /* ==========================
+        /* =========================
            CHECKER
-        ========================== */
+        ========================= */
 
         .checker-section {
             padding: 95px 24px;
@@ -425,9 +425,6 @@
             display: block;
         }
 
-
-        /* quiet warning */
-
         .range-warning {
             display: none;
 
@@ -523,9 +520,9 @@
         }
 
 
-        /* ==========================
+        /* =========================
            LOADING
-        ========================== */
+        ========================= */
 
         .loading-overlay {
             position: fixed;
@@ -560,9 +557,9 @@
         }
 
 
-        /* ==========================
+        /* =========================
            RESULTS
-        ========================== */
+        ========================= */
 
         .results-section {
             display: none;
@@ -826,9 +823,9 @@
         }
 
 
-        /* ==========================
+        /* =========================
            HOW IT WORKS
-        ========================== */
+        ========================= */
 
         .info-section {
             padding: 90px 24px 105px;
@@ -857,10 +854,10 @@
             line-height: 1.02;
         }
 
-
         /*
-            Three equal cards.
-            No giant "instructions" card.
+            SAME THREE-COLUMN EDITORIAL LAYOUT.
+            First card gets the details,
+            but all three boxes stay equal.
         */
 
         .steps {
@@ -874,7 +871,7 @@
         .step {
             min-height: 510px;
 
-            padding: 28px 29px 30px;
+            padding: 28px 30px 32px;
 
             position: relative;
 
@@ -883,7 +880,7 @@
         }
 
         .step-number {
-            margin-bottom: 17px;
+            margin-bottom: 18px;
 
             font-family: Arial, Helvetica, sans-serif;
             font-size: 10px;
@@ -903,9 +900,7 @@
             line-height: 1;
         }
 
-        .step-intro {
-            margin-bottom: 19px;
-
+        .step p {
             color: #57363b;
 
             font-family: Arial, Helvetica, sans-serif;
@@ -915,36 +910,35 @@
         }
 
 
-        /*
-            Actual instructions.
-            Large enough to read.
-        */
+        /* detailed first card */
 
-        .instruction-list {
+        .mini-steps {
+            margin-top: 19px;
+
             border-top: 1px solid rgba(157, 20, 38, 0.25);
         }
 
-        .instruction-row {
+        .mini-step {
             display: grid;
             grid-template-columns: 24px 1fr;
 
-            align-items: start;
+            align-items: center;
 
             gap: 9px;
 
-            padding: 7px 0;
-
-            border-bottom: 1px solid rgba(157, 20, 38, 0.15);
+            padding: 6px 0;
 
             color: #57363b;
 
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 11px;
+            border-bottom: 1px solid rgba(157, 20, 38, 0.15);
 
-            line-height: 1.4;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10.5px;
+
+            line-height: 1.35;
         }
 
-        .instruction-number {
+        .mini-step-number {
             width: 21px;
             height: 21px;
 
@@ -955,107 +949,19 @@
             border: 1px solid var(--red);
             border-radius: 50%;
 
-            font-size: 9px;
+            font-size: 8.5px;
         }
 
-        .instruction-row strong {
+        .mini-step strong {
             font-weight: 600;
         }
 
 
-        /*
-            All Time / HTML are important,
-            but intentionally not screaming.
-        */
+        /* ALL TIME: intentionally subtle */
 
-        .quiet-setting {
-            margin-top: 13px;
+        .all-time-line {
+            margin-top: 14px;
 
-            color: #57363b;
-
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 11px;
-
-            line-height: 1.55;
-        }
-
-        .quiet-setting strong {
-            font-weight: 600;
-
-            text-decoration: underline;
-            text-decoration-thickness: 1px;
-            text-underline-offset: 4px;
-            text-decoration-color: var(--red);
-        }
-
-
-        /*
-            Second card upload area
-        */
-
-        .file-path {
-            margin-top: 17px;
-            padding: 13px 0;
-
-            border-top: 1px solid rgba(157, 20, 38, 0.25);
-            border-bottom: 1px solid rgba(157, 20, 38, 0.25);
-
-            color: #57363b;
-
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 11px;
-
-            line-height: 1.55;
-        }
-
-        .file-path code {
-            font-family: "Courier New", monospace;
-            font-size: 10.5px;
-        }
-
-        .handwritten-note {
-            position: absolute;
-
-            left: 29px;
-            bottom: 26px;
-
-            color: var(--black);
-
-            font-family: "Snell Roundhand", "Brush Script MT", cursive;
-            font-size: 25px;
-
-            line-height: 1.05;
-
-            transform: rotate(-4deg);
-        }
-
-
-        /*
-            Result definitions in third card
-        */
-
-        .definition-list {
-            margin-top: 22px;
-
-            border-top: 1px solid rgba(157, 20, 38, 0.25);
-        }
-
-        .definition {
-            padding: 13px 0;
-
-            border-bottom: 1px solid rgba(157, 20, 38, 0.15);
-        }
-
-        .definition strong {
-            display: block;
-
-            margin-bottom: 4px;
-
-            font-size: 15px;
-            font-weight: 400;
-        }
-
-        .definition span {
             color: #57363b;
 
             font-family: Arial, Helvetica, sans-serif;
@@ -1064,10 +970,44 @@
             line-height: 1.5;
         }
 
+        .all-time-line strong {
+            font-weight: 600;
 
-        /*
-            Why All Time stays subtle beneath cards
-        */
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 4px;
+            text-decoration-color: var(--red);
+        }
+
+        .all-time-line em {
+            margin-left: 3px;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 10.5px;
+        }
+
+        .format-note {
+            margin-top: 6px;
+        }
+
+
+        /* original cute notes */
+
+        .small-note {
+            position: absolute;
+
+            left: 30px;
+            bottom: 27px;
+
+            color: var(--black);
+
+            font-family: "Snell Roundhand", "Brush Script MT", cursive;
+            font-size: 27px;
+
+            line-height: 1.02;
+
+            transform: rotate(-4deg);
+        }
 
         .why-all-time {
             max-width: 700px;
@@ -1097,9 +1037,9 @@
         }
 
 
-        /* ==========================
+        /* =========================
            PRIVACY
-        ========================== */
+        ========================= */
 
         .privacy-section {
             padding: 75px 24px;
@@ -1130,9 +1070,9 @@
         }
 
 
-        /* ==========================
+        /* =========================
            FOOTER
-        ========================== */
+        ========================= */
 
         .footer {
             padding: 25px 24px 35px;
@@ -1162,9 +1102,9 @@
         }
 
 
-        /* ==========================
+        /* =========================
            RESPONSIVE
-        ========================== */
+        ========================= */
 
         @media (max-width: 900px) {
 
@@ -1176,7 +1116,7 @@
                 min-height: auto;
             }
 
-            .handwritten-note {
+            .small-note {
                 position: static;
 
                 display: inline-block;
@@ -1190,7 +1130,6 @@
                 text-align: left;
             }
         }
-
 
         @media (max-width: 800px) {
 
@@ -1238,7 +1177,6 @@
             }
         }
 
-
         @media (max-width: 520px) {
 
             .site-header,
@@ -1284,14 +1222,18 @@
         <div class="header-inner">
 
             <div class="header-left">
+
                 <a class="mini-link" href="#how">
                     How it works
                 </a>
+
             </div>
+
 
             <div class="logo">
                 byselvi
             </div>
+
 
             <div class="header-right">
 
@@ -1315,9 +1257,11 @@
 
     <section class="hero">
 
+
         <div class="hero-sticker sticker-one">
             highly important internet research
         </div>
+
 
         <div class="hero-sticker sticker-two">
             no login.<br>
@@ -1334,9 +1278,11 @@
 
 
             <h1>
+
                 <span>WHO ACTUALLY</span>
                 <span>FOLLOWS YOU</span>
                 <span>BACK?</span>
+
             </h1>
 
 
@@ -1346,9 +1292,11 @@
 
 
             <p class="hero-copy">
+
                 Upload your Instagram followers and following export files.
                 I’ll sort out the mutuals, the one-sided situations,
                 and the people who mysteriously forgot to follow you back.
+
             </p>
 
 
@@ -1368,6 +1316,7 @@
 
         <div class="checker-shell">
 
+
             <div class="section-kicker">
                 01 / the investigation
             </div>
@@ -1383,6 +1332,7 @@
             </div>
 
 
+
             <div class="upload-grid">
 
 
@@ -1396,13 +1346,20 @@
                             file 01 / followers
                         </div>
 
+
                         <h3>
                             Your followers
                         </h3>
 
+
                         <p>
+
                             Choose the Instagram export file normally called
-                            <strong>followers_1.html</strong>.
+
+                            <strong>
+                                followers_1.html
+                            </strong>.
+
                         </p>
 
                     </div>
@@ -1411,13 +1368,19 @@
                     <div>
 
                         <label class="file-button" for="followersFile">
+
                             choose followers ♡
+
                         </label>
+
 
                         <input id="followersFile" type="file" accept=".html,.htm,text/html">
 
+
                         <div id="followersStatus" class="file-status">
+
                             waiting for evidence...
+
                         </div>
 
                     </div>
@@ -1436,13 +1399,20 @@
                             file 02 / following
                         </div>
 
+
                         <h3>
                             Your following
                         </h3>
 
+
                         <p>
+
                             Choose the Instagram export file normally called
-                            <strong>following.html</strong>.
+
+                            <strong>
+                                following.html
+                            </strong>.
+
                         </p>
 
                     </div>
@@ -1451,13 +1421,19 @@
                     <div>
 
                         <label class="file-button" for="followingFile">
+
                             choose following ♡
+
                         </label>
+
 
                         <input id="followingFile" type="file" accept=".html,.htm,text/html">
 
+
                         <div id="followingStatus" class="file-status">
+
                             waiting for evidence...
+
                         </div>
 
                     </div>
@@ -1481,6 +1457,7 @@
                     tiny warning ♡
                 </span>
 
+
                 <p id="rangeWarningText"></p>
 
 
@@ -1488,10 +1465,17 @@
 
                     <input id="allTimeConfirm" type="checkbox">
 
+
                     <span>
+
                         I selected
-                        <strong>ALL TIME</strong>
+
+                        <strong>
+                            ALL TIME
+                        </strong>
+
                         when exporting my Instagram data.
+
                     </span>
 
                 </label>
@@ -1502,14 +1486,19 @@
 
             <div class="compare-row">
 
+
                 <button id="compareButton" class="compare-button">
+
                     investigate
+
                 </button>
 
 
                 <div class="privacy-line">
+
                     Everything is processed inside your browser.
                     Your files are not uploaded anywhere.
+
                 </div>
 
             </div>
@@ -1529,6 +1518,7 @@
             <h2>
                 one second...
             </h2>
+
 
             <p>
                 investigating your questionable social decisions.
@@ -1557,8 +1547,11 @@
                 <div>
 
                     <div id="resultsComment" class="results-comment">
+
                         well. this is interesting.
+
                     </div>
+
 
                     <div id="checkedTime" class="checked-time">
                     </div>
@@ -1575,8 +1568,11 @@
                 <div class="stat-card">
 
                     <span id="notBackCount" class="stat-number">
+
                         0
+
                     </span>
+
 
                     <span class="stat-label">
                         not following you back
@@ -1589,8 +1585,11 @@
                 <div class="stat-card">
 
                     <span id="dontFollowCount" class="stat-number">
+
                         0
+
                     </span>
+
 
                     <span class="stat-label">
                         you don't follow back
@@ -1603,8 +1602,11 @@
                 <div class="stat-card">
 
                     <span id="mutualCount" class="stat-number">
+
                         0
+
                     </span>
+
 
                     <span class="stat-label">
                         mutuals
@@ -1623,16 +1625,25 @@
 
                 <div class="tabs">
 
+
                     <button class="tab-button active" data-tab="notBack">
+
                         not following back
+
                     </button>
+
 
                     <button class="tab-button" data-tab="dontFollow">
+
                         you don't follow
+
                     </button>
 
+
                     <button class="tab-button" data-tab="mutuals">
+
                         mutuals
+
                     </button>
 
                 </div>
@@ -1641,20 +1652,32 @@
 
                 <div class="utility-controls">
 
+
                     <button id="sortButton" class="utility-button">
+
                         sort A–Z
+
                     </button>
+
 
                     <button id="copyButton" class="utility-button">
+
                         copy list
+
                     </button>
+
 
                     <button id="downloadButton" class="utility-button">
+
                         download list
+
                     </button>
 
+
                     <button id="downloadAllButton" class="utility-button">
+
                         download all
+
                     </button>
 
                 </div>
@@ -1662,6 +1685,8 @@
             </div>
 
 
+
+            <!-- LIST -->
 
             <div class="list-card">
 
@@ -1674,6 +1699,7 @@
                         <h3 id="listTitle">
                             Not following you back
                         </h3>
+
 
                         <div id="listDescription" class="list-description">
 
@@ -1690,12 +1716,14 @@
 
                         <input id="searchInput" class="search-input" type="text" placeholder="search username...">
 
+
                         <span id="searchCount" class="search-count">
                         </span>
 
                     </div>
 
                 </div>
+
 
 
                 <div id="usernameList" class="username-list">
@@ -1706,6 +1734,7 @@
 
 
             <div class="bottom-actions">
+
 
                 <button id="newCheckButton" class="new-check-button">
 
@@ -1726,9 +1755,9 @@
 
 
 
-    <!-- =============================
+    <!-- =========================
          HOW IT WORKS
-    ============================== -->
+    ========================== -->
 
     <section id="how" class="info-section">
 
@@ -1741,8 +1770,10 @@
 
 
             <h2>
+
                 Instagram gave you the files.
                 I make them readable.
+
             </h2>
 
 
@@ -1750,259 +1781,183 @@
             <div class="steps">
 
 
-                <!-- CARD ONE -->
+                <!-- 01 DOWNLOAD -->
 
                 <article class="step">
 
+
                     <div class="step-number">
-                        01 / start the export
+                        01
                     </div>
 
 
                     <h3>
-                        Get to your export
+                        Download your data
                     </h3>
 
 
-                    <p class="step-intro">
-                        Start inside the Instagram app.
-                        Here's exactly where to go.
+                    <p>
+
+                        Request your Followers + Following
+                        information from Instagram.
+
                     </p>
 
 
-                    <div class="instruction-list">
+
+                    <div class="mini-steps">
 
 
-                        <div class="instruction-row">
+                        <div class="mini-step">
 
-                            <span class="instruction-number">
+                            <span class="mini-step-number">
                                 1
                             </span>
 
                             <span>
-                                Go to your
-                                <strong>Profile</strong>
-                                → tap
-                                <strong>☰</strong>
-                                in the top-right.
+                                Profile → <strong>☰</strong>
                             </span>
 
                         </div>
 
 
-                        <div class="instruction-row">
 
-                            <span class="instruction-number">
+                        <div class="mini-step">
+
+                            <span class="mini-step-number">
                                 2
                             </span>
 
                             <span>
-                                Open
-                                <strong>Accounts Center</strong>.
+                                <strong>Accounts Center</strong>
                             </span>
 
                         </div>
 
 
-                        <div class="instruction-row">
 
-                            <span class="instruction-number">
+                        <div class="mini-step">
+
+                            <span class="mini-step-number">
                                 3
                             </span>
 
                             <span>
-                                Tap
-                                <strong>Your information and permissions</strong>.
+                                <strong>Your information & permissions</strong>
                             </span>
 
                         </div>
 
 
-                        <div class="instruction-row">
 
-                            <span class="instruction-number">
+                        <div class="mini-step">
+
+                            <span class="mini-step-number">
                                 4
                             </span>
 
                             <span>
-                                Tap
-                                <strong>Export your information</strong>.
+                                <strong>Export your information</strong>
                             </span>
 
                         </div>
 
 
-                        <div class="instruction-row">
 
-                            <span class="instruction-number">
+                        <div class="mini-step">
+
+                            <span class="mini-step-number">
                                 5
                             </span>
 
                             <span>
-                                Select the
-                                <strong>Instagram account</strong>
-                                you want to check.
+                                Select your <strong>Instagram account</strong>
                             </span>
 
                         </div>
 
 
-                        <div class="instruction-row">
 
-                            <span class="instruction-number">
+                        <div class="mini-step">
+
+                            <span class="mini-step-number">
                                 6
                             </span>
 
                             <span>
-                                Choose
-                                <strong>Export to device</strong>.
+                                Choose <strong>Export to device</strong>
                             </span>
 
                         </div>
 
 
-                        <div class="instruction-row">
 
-                            <span class="instruction-number">
+                        <div class="mini-step">
+
+                            <span class="mini-step-number">
                                 7
                             </span>
 
                             <span>
-                                Open
-                                <strong>Customize information</strong>.
+                                Open <strong>Customize information</strong>
                             </span>
 
                         </div>
 
-                    </div>
-
-                </article>
 
 
+                        <div class="mini-step">
 
-                <!-- CARD TWO -->
-
-                <article class="step">
-
-                    <div class="step-number">
-                        02 / choose the right data
-                    </div>
-
-
-                    <h3>
-                        Only export what we need
-                    </h3>
-
-
-                    <p class="step-intro">
-                        Instagram selects lots of information by default.
-                        We only need one thing.
-                    </p>
-
-
-                    <div class="instruction-list">
-
-
-                        <div class="instruction-row">
-
-                            <span class="instruction-number">
+                            <span class="mini-step-number">
                                 8
                             </span>
 
                             <span>
-                                Inside
-                                <strong>Customize information</strong>,
-                                tap
-                                <strong>Clear all</strong>.
+                                Tap <strong>Clear all</strong>
                             </span>
 
                         </div>
 
 
-                        <div class="instruction-row">
 
-                            <span class="instruction-number">
+                        <div class="mini-step">
+
+                            <span class="mini-step-number">
                                 9
                             </span>
 
                             <span>
-                                Scroll down until you reach
-                                <strong>Connections</strong>.
+                                Scroll to <strong>Connections</strong>
                             </span>
 
                         </div>
 
 
-                        <div class="instruction-row">
 
-                            <span class="instruction-number">
+                        <div class="mini-step">
+
+                            <span class="mini-step-number">
                                 10
                             </span>
 
                             <span>
                                 Select
                                 <strong>Followers and following</strong>
-                                only.
+                                only
                             </span>
 
                         </div>
 
 
-                        <div class="instruction-row">
 
-                            <span class="instruction-number">
+                        <div class="mini-step">
+
+                            <span class="mini-step-number">
                                 11
                             </span>
 
                             <span>
-                                Tap
-                                <strong>Save</strong>.
-                            </span>
-
-                        </div>
-
-
-                        <div class="instruction-row">
-
-                            <span class="instruction-number">
-                                12
-                            </span>
-
-                            <span>
-                                Open
-                                <strong>Date range</strong>
-                                and select
-                                <strong>All time</strong>.
-                            </span>
-
-                        </div>
-
-
-                        <div class="instruction-row">
-
-                            <span class="instruction-number">
-                                13
-                            </span>
-
-                            <span>
-                                Open
-                                <strong>Format</strong>
-                                and choose
-                                <strong>HTML</strong>.
-                            </span>
-
-                        </div>
-
-
-                        <div class="instruction-row">
-
-                            <span class="instruction-number">
-                                14
-                            </span>
-
-                            <span>
-                                Tap
-                                <strong>Start export</strong>.
+                                Tap <strong>Save</strong>
                             </span>
 
                         </div>
@@ -2010,16 +1965,59 @@
                     </div>
 
 
-                    <div class="quiet-setting">
+
+                    <div class="all-time-line">
 
                         Date range:
                         <strong>ALL TIME</strong>
-                        — not “Last year”.
+                        <em>— not “Last year”</em>
 
-                        <br>
+                    </div>
+
+
+                    <p class="format-note">
 
                         Format:
-                        <strong>HTML</strong>.
+                        <strong>HTML</strong>
+                        → tap
+                        <strong>Start export</strong>.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- 02 UPLOAD — KEPT SIMPLE -->
+
+                <article class="step">
+
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+
+                    <h3>
+                        Upload both files
+                    </h3>
+
+
+                    <p>
+
+                        Upload
+                        <strong>followers_1.html</strong>
+                        and
+                        <strong>following.html</strong>
+                        above.
+
+                    </p>
+
+
+                    <div class="small-note">
+
+                        wrong file?<br>
+                        i'll catch it ♡
 
                     </div>
 
@@ -2027,149 +2025,35 @@
 
 
 
-                <!-- CARD THREE -->
+                <!-- 03 RESULTS — KEPT SIMPLE -->
 
                 <article class="step">
 
+
                     <div class="step-number">
-                        03 / bring it here
+                        03
                     </div>
 
 
                     <h3>
-                        Upload & investigate
+                        See the situation
                     </h3>
 
 
-                    <p class="step-intro">
-                        Instagram will notify you when the export is ready.
-                        Download it, then come back here.
+                    <p>
+
+                        Search, copy, download or open usernames
+                        directly from your results.
+
                     </p>
 
 
-                    <div class="instruction-list">
+                    <div class="small-note">
 
+                        mutuals,<br>
+                        one-sided situations<br>
+                        & the damage.
 
-                        <div class="instruction-row">
-
-                            <span class="instruction-number">
-                                1
-                            </span>
-
-                            <span>
-                                Download the completed export
-                                from Instagram.
-                            </span>
-
-                        </div>
-
-
-                        <div class="instruction-row">
-
-                            <span class="instruction-number">
-                                2
-                            </span>
-
-                            <span>
-                                Open the downloaded
-                                <strong>ZIP / export folder</strong>.
-                            </span>
-
-                        </div>
-
-
-                        <div class="instruction-row">
-
-                            <span class="instruction-number">
-                                3
-                            </span>
-
-                            <span>
-                                Find your
-                                <strong>followers</strong>
-                                and
-                                <strong>following</strong>
-                                HTML files.
-                            </span>
-
-                        </div>
-
-
-                        <div class="instruction-row">
-
-                            <span class="instruction-number">
-                                4
-                            </span>
-
-                            <span>
-                                Upload each one into its
-                                matching box above.
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="file-path">
-                        Usually:
-                        <br><br>
-
-                        <code>followers_1.html</code>
-                        <br>
-                        <code>following.html</code>
-                    </div>
-
-
-                    <div class="definition-list">
-
-
-                        <div class="definition">
-
-                            <strong>
-                                Not following you back
-                            </strong>
-
-                            <span>
-                                You follow them.
-                                They don't follow you.
-                            </span>
-
-                        </div>
-
-
-                        <div class="definition">
-
-                            <strong>
-                                You don't follow back
-                            </strong>
-
-                            <span>
-                                They follow you.
-                                You don't follow them.
-                            </span>
-
-                        </div>
-
-
-                        <div class="definition">
-
-                            <strong>
-                                Mutuals
-                            </strong>
-
-                            <span>
-                                You both follow each other.
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="handwritten-note">
-                        wrong file?<br>
-                        i'll catch it ♡
                     </div>
 
                 </article>
@@ -2185,8 +2069,8 @@
                 </span>
 
                 Limited date ranges can leave older follower
-                relationships out of the export and make someone
-                who really follows you appear as if they don't.
+                relationships out of the export and make the
+                results inaccurate.
 
             </div>
 
@@ -2202,15 +2086,19 @@
 
         <div class="privacy-shell">
 
+
             <h2>
                 Your stalking remains private.
             </h2>
 
+
             <p>
+
                 This checker runs locally in your browser.
                 The files you choose are read on your own device
                 and are not uploaded to a server by this page.
                 No Instagram username, password or login is required.
+
             </p>
 
         </div>
@@ -2229,6 +2117,7 @@
             byselvi
         </strong>
 
+
         <span class="version">
             follow check · v1.0
         </span>
@@ -2237,9 +2126,9 @@
 
 
 
-    <!-- ==========================
+    <!-- =========================
          JAVASCRIPT
-    =========================== -->
+    ========================== -->
 
     <script>
 
@@ -2262,9 +2151,7 @@
 
 
 
-        /* --------------------------
-           USERNAME HELPERS
-        -------------------------- */
+        /* USERNAME HELPERS */
 
         function cleanUsername(value) {
 
@@ -2286,9 +2173,7 @@
 
 
 
-        /* --------------------------
-           INSPECT FILE
-        -------------------------- */
+        /* INSPECT INSTAGRAM EXPORT */
 
         function inspectInstagramFile(htmlText) {
 
@@ -2312,16 +2197,24 @@
                     .toLowerCase();
 
 
-            let type = "unknown";
+
+            let type =
+                "unknown";
 
 
             if (title === "followers") {
-                type = "followers";
+
+                type =
+                    "followers";
+
             }
 
 
             if (title === "following") {
-                type = "following";
+
+                type =
+                    "following";
+
             }
 
 
@@ -2330,6 +2223,7 @@
                 [...doc.querySelectorAll("aside time[datetime]")]
 
                     .map(element => {
+
 
                         const raw =
                             element.getAttribute("datetime");
@@ -2357,8 +2251,12 @@
 
             if (times.length >= 3) {
 
-                startDate = times[1];
-                endDate = times[2];
+                startDate =
+                    times[1];
+
+
+                endDate =
+                    times[2];
 
             }
 
@@ -2366,6 +2264,7 @@
 
                 startDate =
                     times[times.length - 2];
+
 
                 endDate =
                     times[times.length - 1];
@@ -2378,27 +2277,24 @@
 
                 rangeDays =
                     Math.round(
+
                         (
                             endDate.getTime() -
                             startDate.getTime()
                         )
+
                         /
+
                         86400000
+
                     );
 
             }
 
 
 
-            /*
-                We can't prove the user's chosen setting
-                with absolute certainty from every Instagram
-                export format.
-
-                But a short / ~one-year range is suspicious.
-            */
-
-            let rangeLooksLimited = false;
+            let rangeLooksLimited =
+                false;
 
 
 
@@ -2408,7 +2304,8 @@
                 rangeDays <= 380
             ) {
 
-                rangeLooksLimited = true;
+                rangeLooksLimited =
+                    true;
 
             }
 
@@ -2428,9 +2325,7 @@
 
 
 
-        /* --------------------------
-           EXTRACT USERNAMES
-        -------------------------- */
+        /* EXTRACT USERNAMES */
 
         function extractUsernames(htmlText) {
 
@@ -2459,11 +2354,13 @@
                         link.getAttribute("href") || "";
 
 
-                    let username = "";
+                    let username =
+                        "";
 
 
 
                     try {
+
 
                         const decoded =
                             decodeURIComponent(href);
@@ -2500,7 +2397,9 @@
                     }
 
                     catch (error) {
-                        /* ignore malformed link */
+
+                        /* ignore malformed links */
+
                     }
 
 
@@ -2517,11 +2416,12 @@
                             "reels",
                             "stories",
                             "_u"
-                        ]
-                            .includes(username)
+                        ].includes(username)
                     ) {
 
-                        found.add(username);
+                        found.add(
+                            username
+                        );
 
                     }
 
@@ -2530,8 +2430,8 @@
 
 
             /*
-                Backup for Following exports where
-                usernames are also stored in h2 tags.
+                Following exports may also store
+                usernames in h2 tags.
             */
 
             doc
@@ -2545,6 +2445,7 @@
                         );
 
 
+
                     if (
                         possible &&
                         validUsername(possible) &&
@@ -2552,7 +2453,9 @@
                         possible !== "followers"
                     ) {
 
-                        found.add(possible);
+                        found.add(
+                            possible
+                        );
 
                     }
 
@@ -2566,9 +2469,7 @@
 
 
 
-        /* --------------------------
-           HANDLE FILE
-        -------------------------- */
+        /* HANDLE FILE */
 
         async function handleFile(
             file,
@@ -2585,7 +2486,9 @@
                 document.getElementById(
 
                     expectedType === "followers"
+
                         ? "followersStatus"
+
                         : "followingStatus"
 
                 );
@@ -2594,17 +2497,22 @@
 
             try {
 
+
                 const text =
                     await file.text();
 
 
 
                 const info =
-                    inspectInstagramFile(text);
+                    inspectInstagramFile(
+                        text
+                    );
 
 
 
-                /* WRONG FILE */
+                /*
+                    WRONG FILE DETECTION
+                */
 
                 if (
                     info.type !== "unknown" &&
@@ -2621,15 +2529,19 @@
                             : "wrong file babe ♡ — that's your Followers file";
 
 
+
                     status.className =
                         "file-status bad";
 
 
 
-                    if (expectedType === "followers") {
+                    if (
+                        expectedType === "followers"
+                    ) {
 
                         followers =
                             new Set();
+
 
                         followersInfo =
                             null;
@@ -2641,6 +2553,7 @@
                         following =
                             new Set();
 
+
                         followingInfo =
                             null;
 
@@ -2651,15 +2564,20 @@
                     updateImportSummary();
                     updateRangeWarning();
 
+
                     return;
 
                 }
 
 
 
-                /* RANDOM HTML */
+                /*
+                    RANDOM HTML
+                */
 
-                if (info.type === "unknown") {
+                if (
+                    info.type === "unknown"
+                ) {
 
                     status.textContent =
                         "this doesn't look like the Instagram file we need ♡";
@@ -2676,7 +2594,9 @@
 
 
                 const names =
-                    extractUsernames(text);
+                    extractUsernames(
+                        text
+                    );
 
 
 
@@ -2696,10 +2616,13 @@
 
 
 
-                if (expectedType === "followers") {
+                if (
+                    expectedType === "followers"
+                ) {
 
                     followers =
                         names;
+
 
                     followersInfo =
                         info;
@@ -2710,6 +2633,7 @@
 
                     following =
                         names;
+
 
                     followingInfo =
                         info;
@@ -2734,6 +2658,7 @@
 
             catch (error) {
 
+
                 status.textContent =
                     "couldn't read that file ♡";
 
@@ -2753,9 +2678,13 @@
                 "change",
                 event => {
 
+
                     handleFile(
+
                         event.target.files[0],
+
                         "followers"
+
                     );
 
                 }
@@ -2769,9 +2698,13 @@
                 "change",
                 event => {
 
+
                     handleFile(
+
                         event.target.files[0],
+
                         "following"
+
                     );
 
                 }
@@ -2779,9 +2712,7 @@
 
 
 
-        /* --------------------------
-           IMPORT SUMMARY
-        -------------------------- */
+        /* IMPORT SUMMARY */
 
         function updateImportSummary() {
 
@@ -2797,9 +2728,14 @@
                 !following.size
             ) {
 
-                summary.classList.remove("show");
+                summary
+                    .classList
+                    .remove("show");
 
-                summary.innerHTML = "";
+
+                summary.innerHTML =
+                    "";
+
 
                 return;
 
@@ -2807,7 +2743,8 @@
 
 
 
-            let content = "";
+            let content =
+                "";
 
 
 
@@ -2845,15 +2782,15 @@
                 content;
 
 
-            summary.classList.add("show");
+            summary
+                .classList
+                .add("show");
 
         }
 
 
 
-        /* --------------------------
-           RANGE WARNING
-        -------------------------- */
+        /* DATE RANGE WARNING */
 
         function updateRangeWarning() {
 
@@ -2918,9 +2855,7 @@
 
 
 
-        /* --------------------------
-           COMPARE
-        -------------------------- */
+        /* COMPARE */
 
         function compareLists() {
 
@@ -2941,15 +2876,10 @@
 
 
             if (
-
-                suspiciousRange
-
-                &&
-
+                suspiciousRange &&
                 !document
                     .getElementById("allTimeConfirm")
                     .checked
-
             ) {
 
                 alert(
@@ -2959,7 +2889,9 @@
 
 
                 document
-                    .getElementById("rangeWarning")
+                    .getElementById(
+                        "rangeWarning"
+                    )
                     .scrollIntoView({
 
                         behavior: "smooth",
@@ -2974,6 +2906,11 @@
 
 
 
+            /*
+                YOU FOLLOW THEM
+                BUT THEY DON'T FOLLOW YOU
+            */
+
             results.notBack =
 
                 [...following]
@@ -2987,6 +2924,11 @@
 
 
 
+            /*
+                THEY FOLLOW YOU
+                BUT YOU DON'T FOLLOW THEM
+            */
+
             results.dontFollow =
 
                 [...followers]
@@ -2999,6 +2941,10 @@
                     );
 
 
+
+            /*
+                BOTH LISTS
+            */
 
             results.mutuals =
 
@@ -3028,22 +2974,29 @@
 
 
             document
-                .getElementById("sortButton")
+                .getElementById(
+                    "sortButton"
+                )
                 .textContent =
                 "sort A–Z";
 
 
 
             document
-                .getElementById("searchInput")
+                .getElementById(
+                    "searchInput"
+                )
                 .value =
                 "";
 
 
 
             document
-                .getElementById("checkedTime")
+                .getElementById(
+                    "checkedTime"
+                )
                 .textContent =
+
                 `checked ${new Date().toLocaleString()}`;
 
 
@@ -3076,23 +3029,28 @@
 
 
 
-                    document
-                        .getElementById("resultsSection")
+                    const section =
+                        document.getElementById(
+                            "resultsSection"
+                        );
+
+
+
+                    section
                         .classList
                         .add("show");
 
 
 
-                    document
-                        .getElementById("resultsSection")
+                    section
                         .scrollIntoView({
 
                             behavior: "smooth"
 
                         });
 
-
                 },
+
                 850
             );
 
@@ -3101,7 +3059,9 @@
 
 
         document
-            .getElementById("compareButton")
+            .getElementById(
+                "compareButton"
+            )
             .addEventListener(
                 "click",
                 compareLists
@@ -3109,34 +3069,44 @@
 
 
 
-        /* --------------------------
-           RESULT COUNTS
-        -------------------------- */
+        /* COUNTS */
 
         function updateCounts() {
 
             document
-                .getElementById("notBackCount")
+                .getElementById(
+                    "notBackCount"
+                )
                 .textContent =
-                results.notBack
+
+                results
+                    .notBack
                     .length
                     .toLocaleString();
 
 
 
             document
-                .getElementById("dontFollowCount")
+                .getElementById(
+                    "dontFollowCount"
+                )
                 .textContent =
-                results.dontFollow
+
+                results
+                    .dontFollow
                     .length
                     .toLocaleString();
 
 
 
             document
-                .getElementById("mutualCount")
+                .getElementById(
+                    "mutualCount"
+                )
                 .textContent =
-                results.mutuals
+
+                results
+                    .mutuals
                     .length
                     .toLocaleString();
 
@@ -3144,13 +3114,19 @@
 
 
 
+        /* COMMENT */
+
         function updateComment() {
 
             const count =
-                results.notBack.length;
+                results
+                    .notBack
+                    .length;
 
 
-            let message = "";
+
+            let message =
+                "";
 
 
 
@@ -3192,7 +3168,9 @@
 
 
             document
-                .getElementById("resultsComment")
+                .getElementById(
+                    "resultsComment"
+                )
                 .textContent =
                 message;
 
@@ -3200,12 +3178,12 @@
 
 
 
-        /* --------------------------
-           TABS
-        -------------------------- */
+        /* TABS */
 
         document
-            .querySelectorAll(".tab-button")
+            .querySelectorAll(
+                ".tab-button"
+            )
             .forEach(
                 button => {
 
@@ -3222,7 +3200,9 @@
 
 
                                 document
-                                    .getElementById("searchInput")
+                                    .getElementById(
+                                        "searchInput"
+                                    )
                                     .value =
                                     "";
 
@@ -3242,19 +3222,23 @@
         function updateTabs() {
 
             document
-                .querySelectorAll(".tab-button")
+                .querySelectorAll(
+                    ".tab-button"
+                )
                 .forEach(
                     button => {
 
 
-                        button.classList.toggle(
+                        button
+                            .classList
+                            .toggle(
 
-                            "active",
+                                "active",
 
-                            button.dataset.tab ===
-                            activeTab
+                                button.dataset.tab ===
+                                activeTab
 
-                        );
+                            );
 
                     }
                 );
@@ -3263,14 +3247,16 @@
 
 
 
-        /* --------------------------
-           ACTIVE LIST
-        -------------------------- */
+        /* GET LIST */
 
         function getActiveList() {
 
             let list =
-                [...results[activeTab]];
+                [
+                    ...results[
+                    activeTab
+                    ]
+                ];
 
 
 
@@ -3290,7 +3276,9 @@
 
             const search =
                 document
-                    .getElementById("searchInput")
+                    .getElementById(
+                        "searchInput"
+                    )
                     .value
                     .trim()
                     .toLowerCase();
@@ -3303,7 +3291,9 @@
                     list.filter(
 
                         username =>
-                            username.includes(search)
+                            username.includes(
+                                search
+                            )
 
                     );
 
@@ -3317,9 +3307,7 @@
 
 
 
-        /* --------------------------
-           RENDER LIST
-        -------------------------- */
+        /* RENDER */
 
         function renderList() {
 
@@ -3354,16 +3342,26 @@
 
 
             document
-                .getElementById("listTitle")
+                .getElementById(
+                    "listTitle"
+                )
                 .textContent =
-                titles[activeTab];
+
+                titles[
+                activeTab
+                ];
 
 
 
             document
-                .getElementById("listDescription")
+                .getElementById(
+                    "listDescription"
+                )
                 .textContent =
-                descriptions[activeTab];
+
+                descriptions[
+                activeTab
+                ];
 
 
 
@@ -3373,7 +3371,9 @@
 
 
             document
-                .getElementById("searchCount")
+                .getElementById(
+                    "searchCount"
+                )
                 .textContent =
 
                 `${data.length.toLocaleString()} of ${results[activeTab].length.toLocaleString()} shown`;
@@ -3381,10 +3381,9 @@
 
 
             const container =
-                document
-                    .getElementById(
-                        "usernameList"
-                    );
+                document.getElementById(
+                    "usernameList"
+                );
 
 
 
@@ -3397,9 +3396,9 @@
 
                 container.innerHTML =
                     `
-                    <div class="empty-state">
-                        nothing to report ♡
-                    </div>
+                        <div class="empty-state">
+                            nothing to report ♡
+                        </div>
                     `;
 
 
@@ -3492,7 +3491,9 @@
 
 
         document
-            .getElementById("searchInput")
+            .getElementById(
+                "searchInput"
+            )
             .addEventListener(
                 "input",
                 renderList
@@ -3500,12 +3501,12 @@
 
 
 
-        /* --------------------------
-           SORT
-        -------------------------- */
+        /* SORT */
 
         document
-            .getElementById("sortButton")
+            .getElementById(
+                "sortButton"
+            )
             .addEventListener(
                 "click",
                 event => {
@@ -3533,12 +3534,12 @@
 
 
 
-        /* --------------------------
-           COPY
-        -------------------------- */
+        /* COPY */
 
         document
-            .getElementById("copyButton")
+            .getElementById(
+                "copyButton"
+            )
             .addEventListener(
                 "click",
                 async event => {
@@ -3573,16 +3574,20 @@
 
                         await navigator
                             .clipboard
-                            .writeText(text);
+                            .writeText(
+                                text
+                            );
 
 
 
-                        const old =
-                            event.target.textContent;
+                        const original =
+                            event.target
+                                .textContent;
 
 
 
-                        event.target.textContent =
+                        event.target
+                            .textContent =
                             "copied ♡";
 
 
@@ -3590,10 +3595,14 @@
                         setTimeout(
                             () => {
 
-                                event.target.textContent =
-                                    old;
+
+                                event.target
+                                    .textContent =
+                                    original;
+
 
                             },
+
                             1200
                         );
 
@@ -3612,9 +3621,7 @@
 
 
 
-        /* --------------------------
-           DOWNLOAD
-        -------------------------- */
+        /* DOWNLOAD HELPER */
 
         function downloadText(
             filename,
@@ -3636,16 +3643,18 @@
 
 
             const url =
-                URL.createObjectURL(
-                    blob
-                );
+                URL
+                    .createObjectURL(
+                        blob
+                    );
 
 
 
             const link =
-                document.createElement(
-                    "a"
-                );
+                document
+                    .createElement(
+                        "a"
+                    );
 
 
             link.href =
@@ -3673,11 +3682,14 @@
             setTimeout(
                 () => {
 
+
                     URL.revokeObjectURL(
                         url
                     );
 
+
                 },
+
                 100
             );
 
@@ -3685,8 +3697,12 @@
 
 
 
+        /* CURRENT LIST DOWNLOAD */
+
         document
-            .getElementById("downloadButton")
+            .getElementById(
+                "downloadButton"
+            )
             .addEventListener(
                 "click",
                 () => {
@@ -3708,10 +3724,12 @@
                         `${activeTab}-byselvi.txt`,
 
                         data
+
                             .map(
                                 username =>
                                     `@${username}`
                             )
+
                             .join("\n")
 
                     );
@@ -3721,8 +3739,12 @@
 
 
 
+        /* ALL RESULTS DOWNLOAD */
+
         document
-            .getElementById("downloadAllButton")
+            .getElementById(
+                "downloadAllButton"
+            )
             .addEventListener(
                 "click",
                 () => {
@@ -3761,12 +3783,12 @@ ${results.mutuals.map(x => `@${x}`).join("\n")}
 
 
 
-        /* --------------------------
-           RESET
-        -------------------------- */
+        /* RESET */
 
         document
-            .getElementById("newCheckButton")
+            .getElementById(
+                "newCheckButton"
+            )
             .addEventListener(
                 "click",
                 () => {
@@ -3804,85 +3826,103 @@ ${results.mutuals.map(x => `@${x}`).join("\n")}
 
 
                     document
-                        .getElementById("followersFile")
+                        .getElementById(
+                            "followersFile"
+                        )
                         .value =
                         "";
 
 
 
                     document
-                        .getElementById("followingFile")
+                        .getElementById(
+                            "followingFile"
+                        )
                         .value =
                         "";
 
 
 
-                    const followersStatus =
-                        document
-                            .getElementById(
-                                "followersStatus"
-                            );
-
-
-                    const followingStatus =
-                        document
-                            .getElementById(
-                                "followingStatus"
-                            );
-
-
-
-                    followersStatus.className =
+                    document
+                        .getElementById(
+                            "followersStatus"
+                        )
+                        .className =
                         "file-status";
 
 
-                    followersStatus.textContent =
-                        "waiting for evidence...";
 
-
-
-                    followingStatus.className =
-                        "file-status";
-
-
-                    followingStatus.textContent =
+                    document
+                        .getElementById(
+                            "followersStatus"
+                        )
+                        .textContent =
                         "waiting for evidence...";
 
 
 
                     document
-                        .getElementById("importSummary")
+                        .getElementById(
+                            "followingStatus"
+                        )
+                        .className =
+                        "file-status";
+
+
+
+                    document
+                        .getElementById(
+                            "followingStatus"
+                        )
+                        .textContent =
+                        "waiting for evidence...";
+
+
+
+                    document
+                        .getElementById(
+                            "importSummary"
+                        )
                         .classList
                         .remove("show");
 
 
 
                     document
-                        .getElementById("rangeWarning")
+                        .getElementById(
+                            "rangeWarning"
+                        )
                         .classList
                         .remove("show");
 
 
 
                     document
-                        .getElementById("allTimeConfirm")
+                        .getElementById(
+                            "allTimeConfirm"
+                        )
                         .checked =
                         false;
 
 
 
                     document
-                        .getElementById("resultsSection")
+                        .getElementById(
+                            "resultsSection"
+                        )
                         .classList
                         .remove("show");
 
 
 
                     document
-                        .getElementById("checker")
+                        .getElementById(
+                            "checker"
+                        )
                         .scrollIntoView({
 
-                            behavior: "smooth"
+                            behavior:
+                                "smooth"
 
                         });
 
