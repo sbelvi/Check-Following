@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Follow Check — byselvi</title>
 
     <style>
@@ -22,7 +23,7 @@
             --green: #c6ff62;
             --cream: #fff9f4;
             --black: #0b0b0b;
-            --line: rgba(157, 20, 38, 0.45);
+            --line: rgba(157, 20, 38, 0.42);
         }
 
         html {
@@ -30,11 +31,13 @@
         }
 
         body {
-            background: var(--pink);
-            color: var(--red);
-            font-family: Georgia, "Times New Roman", serif;
             min-height: 100vh;
             overflow-x: hidden;
+
+            background: var(--pink);
+            color: var(--red);
+
+            font-family: Georgia, "Times New Roman", serif;
         }
 
         button,
@@ -50,36 +53,54 @@
             color: inherit;
         }
 
-        /* ─────────────────────────
+
+        /* ==========================
            HEADER
-        ───────────────────────── */
+        ========================== */
 
         .site-header {
-            padding: 16px 24px 12px;
-            border-bottom: 1px solid var(--red);
             position: sticky;
             top: 0;
             z-index: 100;
+
+            padding: 16px 24px 12px;
+
             background: rgba(244, 160, 207, 0.96);
+            border-bottom: 1px solid var(--red);
+
             backdrop-filter: blur(10px);
         }
 
         .header-inner {
             max-width: 1180px;
             margin: 0 auto;
+
             display: grid;
             grid-template-columns: 1fr auto 1fr;
             align-items: center;
+
             gap: 20px;
         }
 
+        .logo {
+            font-family: "Snell Roundhand", "Brush Script MT", cursive;
+            font-size: clamp(38px, 5vw, 58px);
+            font-weight: 400;
+
+            line-height: 0.85;
+
+            transform: rotate(-4deg);
+        }
+
         .mini-link {
+            width: fit-content;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
-            text-transform: uppercase;
+
             letter-spacing: 1.3px;
+            text-transform: uppercase;
             text-decoration: none;
-            width: fit-content;
         }
 
         .mini-link:hover {
@@ -87,59 +108,62 @@
             text-underline-offset: 4px;
         }
 
-        .logo {
-            font-family: "Snell Roundhand", "Brush Script MT", cursive;
-            font-size: clamp(38px, 5vw, 58px);
-            color: var(--red);
-            line-height: 0.85;
-            transform: rotate(-4deg);
-            font-weight: 400;
-        }
-
         .header-right {
             display: flex;
             justify-content: flex-end;
+
             gap: 20px;
         }
 
 
-        /* ─────────────────────────
+        /* ==========================
            HERO
-        ───────────────────────── */
+        ========================== */
 
         .hero {
             min-height: 74vh;
+
             padding: 65px 24px 40px;
+
             display: flex;
             align-items: center;
             justify-content: center;
-            border-bottom: 1px solid var(--red);
+
             position: relative;
+
             overflow: hidden;
+
+            border-bottom: 1px solid var(--red);
         }
 
         .hero-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            text-align: center;
             position: relative;
             z-index: 2;
+
+            max-width: 1100px;
+            margin: 0 auto;
+
+            text-align: center;
         }
 
         .eyebrow {
+            margin-bottom: 20px;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
+
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 20px;
         }
 
         .hero h1 {
+            color: var(--red-dark);
+
             font-size: clamp(58px, 10vw, 132px);
+            font-weight: 400;
+
             line-height: 0.84;
             letter-spacing: -5px;
-            font-weight: 400;
-            color: var(--red-dark);
         }
 
         .hero h1 span {
@@ -147,35 +171,49 @@
         }
 
         .scribble {
+            display: inline-block;
+
+            margin-top: 24px;
+
+            color: var(--black);
+
             font-family: "Snell Roundhand", "Brush Script MT", cursive;
             font-size: clamp(30px, 5vw, 58px);
-            color: var(--black);
+
             transform: rotate(-5deg);
-            display: inline-block;
-            margin-top: 24px;
         }
 
         .hero-copy {
             max-width: 600px;
+
             margin: 28px auto 0;
+
+            color: #5e1822;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 15px;
+
             line-height: 1.6;
-            color: #5e1822;
         }
 
         .hero-button {
             display: inline-block;
+
             margin-top: 30px;
+            padding: 17px 36px;
+
             background: var(--black);
             color: var(--green);
-            border: none;
-            padding: 17px 36px;
+
             border-radius: 999px;
+
             font-family: "Snell Roundhand", "Brush Script MT", cursive;
             font-size: 29px;
+
             text-decoration: none;
+
             transform: rotate(2deg);
+
             transition: transform 0.2s ease;
         }
 
@@ -185,35 +223,45 @@
 
         .hero-sticker {
             position: absolute;
-            border: 1px solid var(--red);
-            background: var(--cream);
+
+            width: 160px;
+
             padding: 12px 18px;
+
+            background: var(--cream);
+
+            border: 1px solid var(--red);
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
+
             line-height: 1.4;
-            width: 160px;
         }
 
         .sticker-one {
             top: 16%;
             left: 5%;
+
             transform: rotate(-8deg);
         }
 
         .sticker-two {
-            bottom: 13%;
             right: 5%;
+            bottom: 13%;
+
             transform: rotate(7deg);
         }
 
 
-        /* ─────────────────────────
+        /* ==========================
            CHECKER
-        ───────────────────────── */
+        ========================== */
 
         .checker-section {
             padding: 95px 24px;
+
             background: var(--blue);
+
             border-bottom: 1px solid var(--red);
         }
 
@@ -223,71 +271,92 @@
         }
 
         .section-kicker {
+            margin-bottom: 14px;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
+
             letter-spacing: 1.4px;
             text-transform: uppercase;
-            margin-bottom: 14px;
         }
 
         .section-title {
+            color: var(--red-dark);
+
             font-size: clamp(45px, 7vw, 84px);
             font-weight: 400;
+
             line-height: 0.95;
-            color: var(--red-dark);
         }
 
         .section-note {
-            font-family: "Snell Roundhand", "Brush Script MT", cursive;
-            color: var(--black);
-            font-size: clamp(27px, 4vw, 44px);
-            transform: rotate(-3deg);
             display: inline-block;
+
             margin: 16px 0 40px;
+
+            color: var(--black);
+
+            font-family: "Snell Roundhand", "Brush Script MT", cursive;
+            font-size: clamp(27px, 4vw, 44px);
+
+            transform: rotate(-3deg);
         }
 
         .upload-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
+
             gap: 24px;
         }
 
         .upload-card {
             min-height: 320px;
-            background: var(--pink);
-            border: 1.5px solid var(--red);
+
             padding: 28px;
+
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+
+            background: var(--pink);
+
+            border: 1.5px solid var(--red);
+
             box-shadow: 8px 8px 0 var(--red);
         }
 
         .upload-card:nth-child(2) {
             background: var(--cream);
+
             transform: rotate(1deg);
         }
 
         .upload-index {
+            margin-bottom: 15px;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
+
             letter-spacing: 1.2px;
             text-transform: uppercase;
-            margin-bottom: 15px;
         }
 
         .upload-card h3 {
+            color: var(--red-dark);
+
             font-size: clamp(31px, 4vw, 48px);
             font-weight: 400;
-            color: var(--red-dark);
         }
 
         .upload-card p {
+            margin-top: 16px;
+
+            color: #4f3035;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 13px;
+
             line-height: 1.6;
-            color: #4f3035;
-            margin-top: 16px;
         }
 
         input[type="file"] {
@@ -296,13 +365,19 @@
 
         .file-button {
             display: inline-flex;
+
+            padding: 14px 25px;
+
             background: var(--black);
             color: var(--green);
+
             border-radius: 999px;
-            padding: 14px 25px;
+
             font-family: "Snell Roundhand", "Brush Script MT", cursive;
             font-size: 25px;
+
             cursor: pointer;
+
             transition: transform 0.18s ease;
         }
 
@@ -311,16 +386,19 @@
         }
 
         .file-status {
-            margin-top: 14px;
             min-height: 18px;
+
+            margin-top: 14px;
+
+            color: #3e3838;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 12px;
-            color: #3e3838;
         }
 
         .file-status.good {
-            font-weight: 700;
             color: #173815;
+            font-weight: 700;
         }
 
         .file-status.bad {
@@ -330,25 +408,32 @@
 
         .import-summary {
             display: none;
+
             margin-top: 28px;
             padding: 15px 0;
+
+            color: #35484c;
+
             border-top: 1px solid #59696d;
             border-bottom: 1px solid #59696d;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
-            color: #35484c;
         }
 
         .import-summary.show {
             display: block;
         }
 
-        /* warning kept quiet + editorial */
+
+        /* quiet warning */
 
         .range-warning {
             display: none;
+
             margin-top: 22px;
             padding: 16px 0;
+
             border-top: 1px solid var(--red);
             border-bottom: 1px solid var(--red);
         }
@@ -358,79 +443,101 @@
         }
 
         .range-warning-title {
+            margin-right: 7px;
+
+            color: var(--black);
+
             font-family: "Snell Roundhand", "Brush Script MT", cursive;
             font-size: 26px;
-            color: var(--black);
-            margin-right: 7px;
         }
 
         .range-warning p {
             display: inline;
+
+            color: #37484c;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
+
             line-height: 1.6;
-            color: #37484c;
         }
 
         .range-confirm {
             display: flex;
-            gap: 9px;
             align-items: center;
+
+            gap: 9px;
+
             margin-top: 12px;
+
+            color: #37484c;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
-            color: #37484c;
+
             cursor: pointer;
         }
 
         .range-confirm strong {
             text-decoration: underline;
             text-underline-offset: 3px;
-            text-decoration-thickness: 1px;
         }
 
         .compare-row {
             margin-top: 40px;
+
             display: flex;
             align-items: center;
-            gap: 28px;
             flex-wrap: wrap;
+
+            gap: 28px;
         }
 
         .compare-button {
-            border: none;
-            background: var(--red);
-            color: var(--pink);
             min-width: 240px;
             min-height: 85px;
-            border-radius: 50%;
+
             padding: 18px 42px;
+
+            background: var(--red);
+            color: var(--pink);
+
+            border: none;
+            border-radius: 50%;
+
             font-family: "Snell Roundhand", "Brush Script MT", cursive;
             font-size: 37px;
+
             transform: rotate(-2deg);
         }
 
         .privacy-line {
+            max-width: 380px;
+
+            color: #425054;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
+
             line-height: 1.5;
-            max-width: 380px;
-            color: #425054;
         }
 
 
-        /* ─────────────────────────
+        /* ==========================
            LOADING
-        ───────────────────────── */
+        ========================== */
 
         .loading-overlay {
             position: fixed;
             inset: 0;
-            background: var(--pink);
             z-index: 999;
+
             display: none;
             align-items: center;
             justify-content: center;
+
+            background: var(--pink);
+
             text-align: center;
         }
 
@@ -445,18 +552,21 @@
 
         .loading-box p {
             margin-top: 15px;
+
+            color: var(--black);
+
             font-family: "Snell Roundhand", "Brush Script MT", cursive;
             font-size: 36px;
-            color: var(--black);
         }
 
 
-        /* ─────────────────────────
+        /* ==========================
            RESULTS
-        ───────────────────────── */
+        ========================== */
 
         .results-section {
             display: none;
+
             padding: 90px 24px 100px;
         }
 
@@ -472,46 +582,60 @@
         .results-header {
             display: grid;
             grid-template-columns: 1.4fr 1fr;
-            gap: 40px;
+
             align-items: end;
+
+            gap: 40px;
+
             margin-bottom: 45px;
         }
 
         .results-header h2 {
+            color: var(--red-dark);
+
             font-size: clamp(58px, 9vw, 112px);
             font-weight: 400;
+
             line-height: 0.85;
-            color: var(--red-dark);
         }
 
         .results-comment {
+            color: var(--black);
+
             font-family: "Snell Roundhand", "Brush Script MT", cursive;
             font-size: clamp(29px, 4vw, 46px);
-            color: var(--black);
-            transform: rotate(-4deg);
+
             text-align: right;
+
+            transform: rotate(-4deg);
         }
 
         .checked-time {
             margin-top: 12px;
-            text-align: right;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 9px;
+
             letter-spacing: 1px;
+            text-align: right;
             text-transform: uppercase;
         }
 
         .stats-grid {
-            border-top: 1px solid var(--red);
-            border-bottom: 1px solid var(--red);
             display: grid;
             grid-template-columns: repeat(3, 1fr);
+
             margin-bottom: 42px;
+
+            border-top: 1px solid var(--red);
+            border-bottom: 1px solid var(--red);
         }
 
         .stat-card {
             padding: 28px 18px;
+
             border-right: 1px solid var(--red);
+
             text-align: center;
         }
 
@@ -521,15 +645,20 @@
 
         .stat-number {
             display: block;
-            font-size: clamp(48px, 7vw, 82px);
+
             color: var(--black);
+
+            font-size: clamp(48px, 7vw, 82px);
         }
 
         .stat-label {
             display: block;
+
             margin-top: 10px;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
+
             letter-spacing: 1px;
             text-transform: uppercase;
         }
@@ -537,26 +666,32 @@
         .controls {
             display: flex;
             justify-content: space-between;
-            gap: 16px;
             flex-wrap: wrap;
+
+            gap: 16px;
+
             margin-bottom: 18px;
         }
 
         .tabs,
         .utility-controls {
             display: flex;
-            gap: 8px;
             flex-wrap: wrap;
+
+            gap: 8px;
         }
 
         .tab-button,
         .utility-button,
         .new-check-button {
-            border: 1px solid var(--red);
+            padding: 10px 16px;
+
             background: transparent;
             color: var(--red);
+
+            border: 1px solid var(--red);
             border-radius: 999px;
-            padding: 10px 16px;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 12px;
         }
@@ -570,17 +705,21 @@
         }
 
         .list-card {
-            border: 1px solid var(--red);
             background: rgba(255, 255, 255, 0.14);
+
+            border: 1px solid var(--red);
         }
 
         .list-header {
             padding: 20px 22px;
-            border-bottom: 1px solid var(--red);
+
             display: flex;
             justify-content: space-between;
-            gap: 20px;
             flex-wrap: wrap;
+
+            gap: 20px;
+
+            border-bottom: 1px solid var(--red);
         }
 
         .list-header h3 {
@@ -590,28 +729,38 @@
 
         .list-description {
             margin-top: 5px;
+
+            color: #69333d;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
-            color: #69333d;
         }
 
         .search-input {
             width: 270px;
             max-width: 100%;
+
+            padding: 8px 2px;
+
+            background: transparent;
+
             border: none;
             border-bottom: 1px solid var(--red);
-            background: transparent;
+
             outline: none;
-            padding: 8px 2px;
+
             font-family: Arial, Helvetica, sans-serif;
         }
 
         .search-count {
             display: block;
+
             margin-top: 5px;
-            text-align: right;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 9px;
+
+            text-align: right;
         }
 
         .username-list {
@@ -621,6 +770,7 @@
 
         .user-row {
             padding: 15px 18px;
+
             border-right: 1px solid var(--line);
             border-bottom: 1px solid var(--line);
         }
@@ -632,10 +782,14 @@
         .user-link {
             display: flex;
             justify-content: space-between;
+
             gap: 10px;
-            text-decoration: none;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 13px;
+
+            text-decoration: none;
+
             word-break: break-word;
         }
 
@@ -645,19 +799,25 @@
 
         .empty-state {
             grid-column: 1 / -1;
+
             padding: 60px 20px;
-            text-align: center;
+
+            color: var(--black);
+
             font-family: "Snell Roundhand", "Brush Script MT", cursive;
             font-size: 34px;
-            color: var(--black);
+
+            text-align: center;
         }
 
         .bottom-actions {
             margin-top: 25px;
+
             display: flex;
             justify-content: space-between;
-            gap: 18px;
             flex-wrap: wrap;
+
+            gap: 18px;
         }
 
         .micro-note {
@@ -666,13 +826,15 @@
         }
 
 
-        /* ─────────────────────────
+        /* ==========================
            HOW IT WORKS
-        ───────────────────────── */
+        ========================== */
 
         .info-section {
             padding: 90px 24px 105px;
+
             background: var(--cream);
+
             border-top: 1px solid var(--red);
             border-bottom: 1px solid var(--red);
         }
@@ -684,147 +846,264 @@
 
         .info-shell h2 {
             max-width: 1000px;
+
             margin-bottom: 42px;
+
+            color: var(--red-dark);
+
             font-size: clamp(46px, 7vw, 78px);
             font-weight: 400;
+
             line-height: 1.02;
-            color: var(--red-dark);
         }
+
+
+        /*
+            Three equal cards.
+            No giant "instructions" card.
+        */
 
         .steps {
             display: grid;
-            grid-template-columns: 1.35fr 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
+
             border-top: 1px solid var(--red);
             border-left: 1px solid var(--red);
         }
 
         .step {
-            padding: 27px 29px 30px;
+            min-height: 510px;
+
+            padding: 28px 29px 30px;
+
+            position: relative;
+
             border-right: 1px solid var(--red);
             border-bottom: 1px solid var(--red);
-            min-height: 335px;
-            position: relative;
         }
 
         .step-number {
             margin-bottom: 17px;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 10px;
+
             letter-spacing: 1.2px;
             text-transform: uppercase;
+
             opacity: 0.72;
         }
 
         .step h3 {
             margin-bottom: 14px;
-            font-size: clamp(24px, 2.5vw, 33px);
+
+            font-size: clamp(25px, 2.5vw, 34px);
             font-weight: 400;
+
             line-height: 1;
         }
 
-        .step p {
+        .step-intro {
+            margin-bottom: 19px;
+
+            color: #57363b;
+
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 11.5px;
+            font-size: 12px;
+
             line-height: 1.55;
-            color: #57363b;
         }
 
-        /* compact instructions */
 
-        .mini-steps {
-            margin-top: 20px;
-            border-top: 1px solid rgba(157, 20, 38, 0.27);
+        /*
+            Actual instructions.
+            Large enough to read.
+        */
+
+        .instruction-list {
+            border-top: 1px solid rgba(157, 20, 38, 0.25);
         }
 
-        .mini-step {
-            display: flex;
-            align-items: center;
+        .instruction-row {
+            display: grid;
+            grid-template-columns: 24px 1fr;
+
+            align-items: start;
+
             gap: 9px;
-            padding: 6px 0;
-            border-bottom: 1px solid rgba(157, 20, 38, 0.16);
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 10px;
-            line-height: 1.35;
+
+            padding: 7px 0;
+
+            border-bottom: 1px solid rgba(157, 20, 38, 0.15);
+
             color: #57363b;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+
+            line-height: 1.4;
         }
 
-        .mini-step-number {
-            flex: 0 0 19px;
-            width: 19px;
-            height: 19px;
-            border: 1px solid var(--red);
-            border-radius: 50%;
+        .instruction-number {
+            width: 21px;
+            height: 21px;
+
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 8px;
+
+            border: 1px solid var(--red);
+            border-radius: 50%;
+
+            font-size: 9px;
         }
 
-        /* demure All Time line */
-
-        .all-time-line {
-            margin-top: 16px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 10.5px;
-            line-height: 1.5;
-            color: #57363b;
-        }
-
-        .all-time-line strong {
+        .instruction-row strong {
             font-weight: 600;
+        }
+
+
+        /*
+            All Time / HTML are important,
+            but intentionally not screaming.
+        */
+
+        .quiet-setting {
+            margin-top: 13px;
+
+            color: #57363b;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+
+            line-height: 1.55;
+        }
+
+        .quiet-setting strong {
+            font-weight: 600;
+
             text-decoration: underline;
             text-decoration-thickness: 1px;
             text-underline-offset: 4px;
             text-decoration-color: var(--red);
         }
 
-        .all-time-line em {
-            margin-left: 3px;
-            font-family: Georgia, "Times New Roman", serif;
+
+        /*
+            Second card upload area
+        */
+
+        .file-path {
+            margin-top: 17px;
+            padding: 13px 0;
+
+            border-top: 1px solid rgba(157, 20, 38, 0.25);
+            border-bottom: 1px solid rgba(157, 20, 38, 0.25);
+
+            color: #57363b;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+
+            line-height: 1.55;
+        }
+
+        .file-path code {
+            font-family: "Courier New", monospace;
             font-size: 10.5px;
         }
 
-        .format-note {
-            margin-top: 8px;
-        }
-
-        .small-note {
+        .handwritten-note {
             position: absolute;
+
             left: 29px;
-            bottom: 27px;
+            bottom: 26px;
+
+            color: var(--black);
+
             font-family: "Snell Roundhand", "Brush Script MT", cursive;
             font-size: 25px;
-            line-height: 1;
-            color: var(--black);
+
+            line-height: 1.05;
+
             transform: rotate(-4deg);
         }
 
+
+        /*
+            Result definitions in third card
+        */
+
+        .definition-list {
+            margin-top: 22px;
+
+            border-top: 1px solid rgba(157, 20, 38, 0.25);
+        }
+
+        .definition {
+            padding: 13px 0;
+
+            border-bottom: 1px solid rgba(157, 20, 38, 0.15);
+        }
+
+        .definition strong {
+            display: block;
+
+            margin-bottom: 4px;
+
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .definition span {
+            color: #57363b;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10.5px;
+
+            line-height: 1.5;
+        }
+
+
+        /*
+            Why All Time stays subtle beneath cards
+        */
+
         .why-all-time {
+            max-width: 700px;
+
             margin: 18px 0 0 auto;
-            max-width: 680px;
-            text-align: right;
+
+            color: #80676c;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 9.5px;
+
             line-height: 1.55;
-            color: #80676c;
+
+            text-align: right;
         }
 
         .why-all-time span {
             margin-right: 4px;
+
+            color: #604047;
+
             font-family: Georgia, "Times New Roman", serif;
             font-style: italic;
+
             text-decoration: underline;
             text-underline-offset: 3px;
-            color: #604047;
         }
 
 
-        /* ─────────────────────────
-           PRIVACY + FOOTER
-        ───────────────────────── */
+        /* ==========================
+           PRIVACY
+        ========================== */
 
         .privacy-section {
             padding: 75px 24px;
+
             background: var(--black);
             color: var(--green);
         }
@@ -835,27 +1114,38 @@
         }
 
         .privacy-shell h2 {
+            margin-bottom: 22px;
+
             font-size: clamp(42px, 6vw, 68px);
             font-weight: 400;
-            margin-bottom: 22px;
         }
 
         .privacy-shell p {
             max-width: 750px;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 14px;
+
             line-height: 1.7;
         }
 
+
+        /* ==========================
+           FOOTER
+        ========================== */
+
         .footer {
             padding: 25px 24px 35px;
-            text-align: center;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
+
+            text-align: center;
         }
 
         .footer strong {
             margin-left: 5px;
+
             font-family: "Snell Roundhand", "Brush Script MT", cursive;
             font-size: 25px;
             font-weight: 400;
@@ -863,20 +1153,21 @@
 
         .version {
             display: block;
+
             margin-top: 7px;
+
             font-size: 9px;
+
             opacity: 0.55;
         }
 
 
-        /* ─────────────────────────
-           MOBILE
-        ───────────────────────── */
+        /* ==========================
+           RESPONSIVE
+        ========================== */
 
-        @media (max-width: 850px) {
+        @media (max-width: 900px) {
 
-            .upload-grid,
-            .results-header,
             .steps {
                 grid-template-columns: 1fr;
             }
@@ -885,25 +1176,43 @@
                 min-height: auto;
             }
 
-            .small-note {
+            .handwritten-note {
                 position: static;
+
                 display: inline-block;
+
                 margin-top: 28px;
             }
 
             .why-all-time {
                 margin-left: 0;
+
                 text-align: left;
             }
         }
 
+
         @media (max-width: 800px) {
+
             .header-inner {
                 grid-template-columns: 1fr auto;
             }
 
             .header-left {
                 display: none;
+            }
+
+            .hero-sticker {
+                display: none;
+            }
+
+            .upload-grid,
+            .results-header {
+                grid-template-columns: 1fr;
+            }
+
+            .upload-card:nth-child(2) {
+                transform: none;
             }
 
             .stats-grid {
@@ -927,15 +1236,8 @@
             .checked-time {
                 text-align: left;
             }
-
-            .upload-card:nth-child(2) {
-                transform: none;
-            }
-
-            .hero-sticker {
-                display: none;
-            }
         }
+
 
         @media (max-width: 520px) {
 
@@ -974,23 +1276,45 @@
 
 <body>
 
+
+    <!-- HEADER -->
+
     <header class="site-header">
+
         <div class="header-inner">
+
             <div class="header-left">
-                <a class="mini-link" href="#how">How it works</a>
+                <a class="mini-link" href="#how">
+                    How it works
+                </a>
             </div>
 
-            <div class="logo">byselvi</div>
+            <div class="logo">
+                byselvi
+            </div>
 
             <div class="header-right">
-                <a class="mini-link" href="#checker">Check account</a>
-                <a class="mini-link" href="#privacy">Privacy</a>
+
+                <a class="mini-link" href="#checker">
+                    Check account
+                </a>
+
+                <a class="mini-link" href="#privacy">
+                    Privacy
+                </a>
+
             </div>
+
         </div>
+
     </header>
 
 
+
+    <!-- HERO -->
+
     <section class="hero">
+
         <div class="hero-sticker sticker-one">
             highly important internet research
         </div>
@@ -1001,10 +1325,13 @@
             no weird app.
         </div>
 
+
         <div class="hero-inner">
+
             <div class="eyebrow">
                 an unnecessarily necessary instagram tool
             </div>
+
 
             <h1>
                 <span>WHO ACTUALLY</span>
@@ -1012,9 +1339,11 @@
                 <span>BACK?</span>
             </h1>
 
+
             <div class="scribble">
                 because apparently we have to investigate this ourselves.
             </div>
+
 
             <p class="hero-copy">
                 Upload your Instagram followers and following export files.
@@ -1022,19 +1351,32 @@
                 and the people who mysteriously forgot to follow you back.
             </p>
 
+
             <a href="#checker" class="hero-button">
                 check my account ♡
             </a>
+
         </div>
+
     </section>
 
 
+
+    <!-- CHECKER -->
+
     <section id="checker" class="checker-section">
+
         <div class="checker-shell">
 
-            <div class="section-kicker">01 / the investigation</div>
+            <div class="section-kicker">
+                01 / the investigation
+            </div>
 
-            <h2 class="section-title">Drop the evidence.</h2>
+
+            <h2 class="section-title">
+                Drop the evidence.
+            </h2>
+
 
             <div class="section-note">
                 two files. one mildly devastating answer.
@@ -1043,66 +1385,95 @@
 
             <div class="upload-grid">
 
+
+                <!-- FOLLOWERS -->
+
                 <article class="upload-card">
+
                     <div>
+
                         <div class="upload-index">
                             file 01 / followers
                         </div>
 
-                        <h3>Your followers</h3>
+                        <h3>
+                            Your followers
+                        </h3>
 
                         <p>
                             Choose the Instagram export file normally called
                             <strong>followers_1.html</strong>.
                         </p>
+
                     </div>
 
+
                     <div>
+
                         <label class="file-button" for="followersFile">
                             choose followers ♡
                         </label>
 
-                        <input id="followersFile" type="file" accept=".html,.htm,text/html" />
+                        <input id="followersFile" type="file" accept=".html,.htm,text/html">
 
                         <div id="followersStatus" class="file-status">
                             waiting for evidence...
                         </div>
+
                     </div>
+
                 </article>
 
 
+
+                <!-- FOLLOWING -->
+
                 <article class="upload-card">
+
                     <div>
+
                         <div class="upload-index">
                             file 02 / following
                         </div>
 
-                        <h3>Your following</h3>
+                        <h3>
+                            Your following
+                        </h3>
 
                         <p>
                             Choose the Instagram export file normally called
                             <strong>following.html</strong>.
                         </p>
+
                     </div>
 
+
                     <div>
+
                         <label class="file-button" for="followingFile">
                             choose following ♡
                         </label>
 
-                        <input id="followingFile" type="file" accept=".html,.htm,text/html" />
+                        <input id="followingFile" type="file" accept=".html,.htm,text/html">
 
                         <div id="followingStatus" class="file-status">
                             waiting for evidence...
                         </div>
+
                     </div>
+
                 </article>
 
             </div>
 
 
-            <div id="importSummary" class="import-summary"></div>
 
+            <div id="importSummary" class="import-summary">
+            </div>
+
+
+
+            <!-- DATE RANGE WARNING -->
 
             <div id="rangeWarning" class="range-warning">
 
@@ -1112,16 +1483,21 @@
 
                 <p id="rangeWarningText"></p>
 
+
                 <label class="range-confirm">
-                    <input id="allTimeConfirm" type="checkbox" />
+
+                    <input id="allTimeConfirm" type="checkbox">
 
                     <span>
-                        I selected <strong>ALL TIME</strong>
-                        when downloading my Instagram data.
+                        I selected
+                        <strong>ALL TIME</strong>
+                        when exporting my Instagram data.
                     </span>
+
                 </label>
 
             </div>
+
 
 
             <div class="compare-row">
@@ -1130,67 +1506,123 @@
                     investigate
                 </button>
 
+
                 <div class="privacy-line">
                     Everything is processed inside your browser.
                     Your files are not uploaded anywhere.
                 </div>
 
             </div>
+
         </div>
+
     </section>
 
 
+
+    <!-- LOADING -->
+
     <div id="loadingOverlay" class="loading-overlay">
+
         <div class="loading-box">
-            <h2>one second...</h2>
-            <p>investigating your questionable social decisions.</p>
+
+            <h2>
+                one second...
+            </h2>
+
+            <p>
+                investigating your questionable social decisions.
+            </p>
+
         </div>
+
     </div>
 
 
+
+    <!-- RESULTS -->
+
     <section id="resultsSection" class="results-section">
+
         <div class="results-shell">
 
+
             <div class="results-header">
-                <h2>THE DAMAGE.</h2>
+
+                <h2>
+                    THE DAMAGE.
+                </h2>
+
 
                 <div>
+
                     <div id="resultsComment" class="results-comment">
                         well. this is interesting.
                     </div>
 
-                    <div id="checkedTime" class="checked-time"></div>
+                    <div id="checkedTime" class="checked-time">
+                    </div>
+
                 </div>
+
             </div>
+
 
 
             <div class="stats-grid">
+
+
                 <div class="stat-card">
-                    <span id="notBackCount" class="stat-number">0</span>
+
+                    <span id="notBackCount" class="stat-number">
+                        0
+                    </span>
+
                     <span class="stat-label">
                         not following you back
                     </span>
+
                 </div>
 
+
+
                 <div class="stat-card">
-                    <span id="dontFollowCount" class="stat-number">0</span>
+
+                    <span id="dontFollowCount" class="stat-number">
+                        0
+                    </span>
+
                     <span class="stat-label">
                         you don't follow back
                     </span>
+
                 </div>
 
+
+
                 <div class="stat-card">
-                    <span id="mutualCount" class="stat-number">0</span>
+
+                    <span id="mutualCount" class="stat-number">
+                        0
+                    </span>
+
                     <span class="stat-label">
                         mutuals
                     </span>
+
                 </div>
+
             </div>
 
 
+
+            <!-- CONTROLS -->
+
             <div class="controls">
 
+
                 <div class="tabs">
+
                     <button class="tab-button active" data-tab="notBack">
                         not following back
                     </button>
@@ -1202,10 +1634,13 @@
                     <button class="tab-button" data-tab="mutuals">
                         mutuals
                     </button>
+
                 </div>
 
 
+
                 <div class="utility-controls">
+
                     <button id="sortButton" class="utility-button">
                         sort A–Z
                     </button>
@@ -1221,62 +1656,89 @@
                     <button id="downloadAllButton" class="utility-button">
                         download all
                     </button>
+
                 </div>
 
             </div>
 
 
+
             <div class="list-card">
+
 
                 <div class="list-header">
 
+
                     <div>
+
                         <h3 id="listTitle">
                             Not following you back
                         </h3>
 
                         <div id="listDescription" class="list-description">
-                            You follow them. They don't follow you.
+
+                            You follow them.
+                            They don't follow you.
+
                         </div>
+
                     </div>
 
 
-                    <div>
-                        <input id="searchInput" class="search-input" type="text" placeholder="search username..." />
 
-                        <span id="searchCount" class="search-count"></span>
+                    <div>
+
+                        <input id="searchInput" class="search-input" type="text" placeholder="search username...">
+
+                        <span id="searchCount" class="search-count">
+                        </span>
+
                     </div>
 
                 </div>
 
-                <div id="usernameList" class="username-list"></div>
+
+                <div id="usernameList" class="username-list">
+                </div>
 
             </div>
 
 
+
             <div class="bottom-actions">
+
                 <button id="newCheckButton" class="new-check-button">
+
                     start a new check
+
                 </button>
+
 
                 <div class="micro-note">
                     usernames open directly on Instagram ↗
                 </div>
+
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- HOW IT WORKS -->
+
+    <!-- =============================
+         HOW IT WORKS
+    ============================== -->
 
     <section id="how" class="info-section">
 
         <div class="info-shell">
 
+
             <div class="section-kicker">
                 02 / how it works
             </div>
+
 
             <h2>
                 Instagram gave you the files.
@@ -1284,129 +1746,465 @@
             </h2>
 
 
+
             <div class="steps">
 
-                <!-- CARD 1 -->
+
+                <!-- CARD ONE -->
 
                 <article class="step">
 
-                    <div class="step-number">01</div>
-
-                    <h3>Download your data</h3>
-
-                    <p>
-                        Request your Followers + Following information
-                        from Instagram.
-                    </p>
-
-
-                    <div class="mini-steps">
-
-                        <div class="mini-step">
-                            <span class="mini-step-number">1</span>
-                            Profile → ☰
-                        </div>
-
-                        <div class="mini-step">
-                            <span class="mini-step-number">2</span>
-                            Accounts Center
-                        </div>
-
-                        <div class="mini-step">
-                            <span class="mini-step-number">3</span>
-                            Your information & permissions
-                        </div>
-
-                        <div class="mini-step">
-                            <span class="mini-step-number">4</span>
-                            Download your information
-                        </div>
-
-                        <div class="mini-step">
-                            <span class="mini-step-number">5</span>
-                            Some of your information
-                        </div>
-
-                        <div class="mini-step">
-                            <span class="mini-step-number">6</span>
-                            Followers and following
-                        </div>
-
+                    <div class="step-number">
+                        01 / start the export
                     </div>
 
 
-                    <div class="all-time-line">
-                        Date range:
-                        <strong>ALL TIME</strong>
-                        <em>— not “Last year”</em>
-                    </div>
+                    <h3>
+                        Get to your export
+                    </h3>
 
-                    <p class="format-note">
-                        Choose <strong>HTML</strong> as the format.
+
+                    <p class="step-intro">
+                        Start inside the Instagram app.
+                        Here's exactly where to go.
                     </p>
+
+
+                    <div class="instruction-list">
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                1
+                            </span>
+
+                            <span>
+                                Go to your
+                                <strong>Profile</strong>
+                                → tap
+                                <strong>☰</strong>
+                                in the top-right.
+                            </span>
+
+                        </div>
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                2
+                            </span>
+
+                            <span>
+                                Open
+                                <strong>Accounts Center</strong>.
+                            </span>
+
+                        </div>
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                3
+                            </span>
+
+                            <span>
+                                Tap
+                                <strong>Your information and permissions</strong>.
+                            </span>
+
+                        </div>
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                4
+                            </span>
+
+                            <span>
+                                Tap
+                                <strong>Export your information</strong>.
+                            </span>
+
+                        </div>
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                5
+                            </span>
+
+                            <span>
+                                Select the
+                                <strong>Instagram account</strong>
+                                you want to check.
+                            </span>
+
+                        </div>
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                6
+                            </span>
+
+                            <span>
+                                Choose
+                                <strong>Export to device</strong>.
+                            </span>
+
+                        </div>
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                7
+                            </span>
+
+                            <span>
+                                Open
+                                <strong>Customize information</strong>.
+                            </span>
+
+                        </div>
+
+                    </div>
 
                 </article>
 
 
-                <!-- CARD 2 -->
+
+                <!-- CARD TWO -->
 
                 <article class="step">
 
-                    <div class="step-number">02</div>
+                    <div class="step-number">
+                        02 / choose the right data
+                    </div>
 
-                    <h3>Upload both files</h3>
 
-                    <p>
-                        Upload <strong>followers_1.html</strong>
-                        and <strong>following.html</strong> above.
+                    <h3>
+                        Only export what we need
+                    </h3>
+
+
+                    <p class="step-intro">
+                        Instagram selects lots of information by default.
+                        We only need one thing.
                     </p>
 
-                    <div class="small-note">
+
+                    <div class="instruction-list">
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                8
+                            </span>
+
+                            <span>
+                                Inside
+                                <strong>Customize information</strong>,
+                                tap
+                                <strong>Clear all</strong>.
+                            </span>
+
+                        </div>
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                9
+                            </span>
+
+                            <span>
+                                Scroll down until you reach
+                                <strong>Connections</strong>.
+                            </span>
+
+                        </div>
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                10
+                            </span>
+
+                            <span>
+                                Select
+                                <strong>Followers and following</strong>
+                                only.
+                            </span>
+
+                        </div>
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                11
+                            </span>
+
+                            <span>
+                                Tap
+                                <strong>Save</strong>.
+                            </span>
+
+                        </div>
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                12
+                            </span>
+
+                            <span>
+                                Open
+                                <strong>Date range</strong>
+                                and select
+                                <strong>All time</strong>.
+                            </span>
+
+                        </div>
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                13
+                            </span>
+
+                            <span>
+                                Open
+                                <strong>Format</strong>
+                                and choose
+                                <strong>HTML</strong>.
+                            </span>
+
+                        </div>
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                14
+                            </span>
+
+                            <span>
+                                Tap
+                                <strong>Start export</strong>.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quiet-setting">
+
+                        Date range:
+                        <strong>ALL TIME</strong>
+                        — not “Last year”.
+
+                        <br>
+
+                        Format:
+                        <strong>HTML</strong>.
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CARD THREE -->
+
+                <article class="step">
+
+                    <div class="step-number">
+                        03 / bring it here
+                    </div>
+
+
+                    <h3>
+                        Upload & investigate
+                    </h3>
+
+
+                    <p class="step-intro">
+                        Instagram will notify you when the export is ready.
+                        Download it, then come back here.
+                    </p>
+
+
+                    <div class="instruction-list">
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                1
+                            </span>
+
+                            <span>
+                                Download the completed export
+                                from Instagram.
+                            </span>
+
+                        </div>
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                2
+                            </span>
+
+                            <span>
+                                Open the downloaded
+                                <strong>ZIP / export folder</strong>.
+                            </span>
+
+                        </div>
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                3
+                            </span>
+
+                            <span>
+                                Find your
+                                <strong>followers</strong>
+                                and
+                                <strong>following</strong>
+                                HTML files.
+                            </span>
+
+                        </div>
+
+
+                        <div class="instruction-row">
+
+                            <span class="instruction-number">
+                                4
+                            </span>
+
+                            <span>
+                                Upload each one into its
+                                matching box above.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="file-path">
+                        Usually:
+                        <br><br>
+
+                        <code>followers_1.html</code>
+                        <br>
+                        <code>following.html</code>
+                    </div>
+
+
+                    <div class="definition-list">
+
+
+                        <div class="definition">
+
+                            <strong>
+                                Not following you back
+                            </strong>
+
+                            <span>
+                                You follow them.
+                                They don't follow you.
+                            </span>
+
+                        </div>
+
+
+                        <div class="definition">
+
+                            <strong>
+                                You don't follow back
+                            </strong>
+
+                            <span>
+                                They follow you.
+                                You don't follow them.
+                            </span>
+
+                        </div>
+
+
+                        <div class="definition">
+
+                            <strong>
+                                Mutuals
+                            </strong>
+
+                            <span>
+                                You both follow each other.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="handwritten-note">
                         wrong file?<br>
                         i'll catch it ♡
                     </div>
 
                 </article>
 
-
-                <!-- CARD 3 -->
-
-                <article class="step">
-
-                    <div class="step-number">03</div>
-
-                    <h3>See the situation</h3>
-
-                    <p>
-                        Search, copy, download or open usernames
-                        directly from your results.
-                    </p>
-
-                    <div class="small-note">
-                        mutuals,<br>
-                        one-sided situations<br>
-                        & the damage.
-                    </div>
-
-                </article>
-
             </div>
+
 
 
             <div class="why-all-time">
-                <span>Why all time?</span>
-                Limited exports can miss older follower relationships
-                and make the results inaccurate.
+
+                <span>
+                    Why all time?
+                </span>
+
+                Limited date ranges can leave older follower
+                relationships out of the export and make someone
+                who really follows you appear as if they don't.
+
             </div>
 
         </div>
+
     </section>
 
 
+
+    <!-- PRIVACY -->
+
     <section id="privacy" class="privacy-section">
+
         <div class="privacy-shell">
 
-            <h2>Your stalking remains private.</h2>
+            <h2>
+                Your stalking remains private.
+            </h2>
 
             <p>
                 This checker runs locally in your browser.
@@ -1416,18 +2214,32 @@
             </p>
 
         </div>
+
     </section>
 
 
+
+    <!-- FOOTER -->
+
     <footer class="footer">
+
         made with questionable priorities by
-        <strong>byselvi</strong>
+
+        <strong>
+            byselvi
+        </strong>
 
         <span class="version">
             follow check · v1.0
         </span>
+
     </footer>
 
+
+
+    <!-- ==========================
+         JAVASCRIPT
+    =========================== -->
 
     <script>
 
@@ -1449,25 +2261,40 @@
         let ascending = true;
 
 
+
+        /* --------------------------
+           USERNAME HELPERS
+        -------------------------- */
+
         function cleanUsername(value) {
+
             return value
                 .trim()
                 .replace(/^@/, "")
                 .replace(/\/+$/, "")
                 .toLowerCase();
+
         }
+
 
 
         function validUsername(username) {
+
             return /^[a-z0-9._]+$/i.test(username);
+
         }
 
 
-        /* INSPECT FILE */
+
+        /* --------------------------
+           INSPECT FILE
+        -------------------------- */
 
         function inspectInstagramFile(htmlText) {
 
-            const parser = new DOMParser();
+            const parser =
+                new DOMParser();
+
 
             const doc =
                 parser.parseFromString(
@@ -1487,30 +2314,39 @@
 
             let type = "unknown";
 
+
             if (title === "followers") {
                 type = "followers";
             }
+
 
             if (title === "following") {
                 type = "following";
             }
 
 
+
             const times =
                 [...doc.querySelectorAll("aside time[datetime]")]
+
                     .map(element => {
 
                         const raw =
                             element.getAttribute("datetime");
 
+
                         const date =
                             new Date(raw);
+
 
                         return Number.isNaN(date.getTime())
                             ? null
                             : date;
+
                     })
+
                     .filter(Boolean);
+
 
 
             let startDate = null;
@@ -1518,19 +2354,24 @@
             let rangeDays = null;
 
 
+
             if (times.length >= 3) {
 
                 startDate = times[1];
                 endDate = times[2];
 
-            } else if (times.length >= 2) {
+            }
+
+            else if (times.length >= 2) {
 
                 startDate =
                     times[times.length - 2];
 
                 endDate =
                     times[times.length - 1];
+
             }
+
 
 
             if (startDate && endDate) {
@@ -1540,12 +2381,25 @@
                         (
                             endDate.getTime() -
                             startDate.getTime()
-                        ) / 86400000
+                        )
+                        /
+                        86400000
                     );
+
             }
 
 
+
+            /*
+                We can't prove the user's chosen setting
+                with absolute certainty from every Instagram
+                export format.
+
+                But a short / ~one-year range is suspicious.
+            */
+
             let rangeLooksLimited = false;
+
 
 
             if (
@@ -1553,25 +2407,36 @@
                 rangeDays > 0 &&
                 rangeDays <= 380
             ) {
+
                 rangeLooksLimited = true;
+
             }
 
 
+
             return {
+
                 type,
                 startDate,
                 endDate,
                 rangeDays,
                 rangeLooksLimited
+
             };
+
         }
 
 
-        /* EXTRACT USERNAMES */
+
+        /* --------------------------
+           EXTRACT USERNAMES
+        -------------------------- */
 
         function extractUsernames(htmlText) {
 
-            const parser = new DOMParser();
+            const parser =
+                new DOMParser();
+
 
             const doc =
                 parser.parseFromString(
@@ -1580,16 +2445,22 @@
                 );
 
 
-            const found = new Set();
+            const found =
+                new Set();
 
 
-            doc.querySelectorAll("a[href]")
+
+            doc
+                .querySelectorAll("a[href]")
                 .forEach(link => {
+
 
                     const href =
                         link.getAttribute("href") || "";
 
+
                     let username = "";
+
 
 
                     try {
@@ -1598,10 +2469,12 @@
                             decodeURIComponent(href);
 
 
+
                         let match =
                             decoded.match(
                                 /instagram\.com\/_u\/([A-Za-z0-9._]+)/i
                             );
+
 
 
                         if (!match) {
@@ -1610,16 +2483,26 @@
                                 decoded.match(
                                     /instagram\.com\/([A-Za-z0-9._]+)/i
                                 );
+
                         }
+
 
 
                         if (match) {
 
                             username =
-                                cleanUsername(match[1]);
+                                cleanUsername(
+                                    match[1]
+                                );
+
                         }
 
-                    } catch (error) { }
+                    }
+
+                    catch (error) {
+                        /* ignore malformed link */
+                    }
+
 
 
                     if (
@@ -1634,19 +2517,27 @@
                             "reels",
                             "stories",
                             "_u"
-                        ].includes(username)
+                        ]
+                            .includes(username)
                     ) {
 
                         found.add(username);
+
                     }
 
                 });
 
 
-            /* following export backup */
 
-            doc.querySelectorAll("h2")
+            /*
+                Backup for Following exports where
+                usernames are also stored in h2 tags.
+            */
+
+            doc
+                .querySelectorAll("h2")
                 .forEach(heading => {
+
 
                     const possible =
                         cleanUsername(
@@ -1662,31 +2553,43 @@
                     ) {
 
                         found.add(possible);
+
                     }
 
                 });
 
 
+
             return found;
+
         }
 
 
-        /* FILE UPLOAD */
+
+        /* --------------------------
+           HANDLE FILE
+        -------------------------- */
 
         async function handleFile(
             file,
             expectedType
         ) {
 
-            if (!file) return;
+            if (!file) {
+                return;
+            }
+
 
 
             const status =
                 document.getElementById(
+
                     expectedType === "followers"
                         ? "followersStatus"
                         : "followingStatus"
+
                 );
+
 
 
             try {
@@ -1695,8 +2598,10 @@
                     await file.text();
 
 
+
                 const info =
                     inspectInstagramFile(text);
+
 
 
                 /* WRONG FILE */
@@ -1706,9 +2611,13 @@
                     info.type !== expectedType
                 ) {
 
+
                     status.textContent =
+
                         expectedType === "followers"
+
                             ? "wrong file babe ♡ — that's your Following file"
+
                             : "wrong file babe ♡ — that's your Followers file";
 
 
@@ -1716,39 +2625,59 @@
                         "file-status bad";
 
 
+
                     if (expectedType === "followers") {
 
-                        followers = new Set();
-                        followersInfo = null;
+                        followers =
+                            new Set();
 
-                    } else {
+                        followersInfo =
+                            null;
 
-                        following = new Set();
-                        followingInfo = null;
                     }
+
+                    else {
+
+                        following =
+                            new Set();
+
+                        followingInfo =
+                            null;
+
+                    }
+
 
 
                     updateImportSummary();
                     updateRangeWarning();
 
                     return;
+
                 }
 
+
+
+                /* RANDOM HTML */
 
                 if (info.type === "unknown") {
 
                     status.textContent =
                         "this doesn't look like the Instagram file we need ♡";
 
+
                     status.className =
                         "file-status bad";
 
+
                     return;
+
                 }
+
 
 
                 const names =
                     extractUsernames(text);
+
 
 
                 if (!names.size) {
@@ -1756,23 +2685,37 @@
                     status.textContent =
                         "Instagram file found, but I couldn't find usernames inside ♡";
 
+
                     status.className =
                         "file-status bad";
 
+
                     return;
+
                 }
+
 
 
                 if (expectedType === "followers") {
 
-                    followers = names;
-                    followersInfo = info;
+                    followers =
+                        names;
 
-                } else {
+                    followersInfo =
+                        info;
 
-                    following = names;
-                    followingInfo = info;
                 }
+
+                else {
+
+                    following =
+                        names;
+
+                    followingInfo =
+                        info;
+
+                }
+
 
 
                 status.textContent =
@@ -1783,19 +2726,25 @@
                     "file-status good";
 
 
+
                 updateImportSummary();
                 updateRangeWarning();
 
+            }
 
-            } catch (error) {
+            catch (error) {
 
                 status.textContent =
                     "couldn't read that file ♡";
 
+
                 status.className =
                     "file-status bad";
+
             }
+
         }
+
 
 
         document
@@ -1808,8 +2757,10 @@
                         event.target.files[0],
                         "followers"
                     );
+
                 }
             );
+
 
 
         document
@@ -1822,11 +2773,15 @@
                         event.target.files[0],
                         "following"
                     );
+
                 }
             );
 
 
-        /* SUMMARY */
+
+        /* --------------------------
+           IMPORT SUMMARY
+        -------------------------- */
 
         function updateImportSummary() {
 
@@ -1836,44 +2791,69 @@
                 );
 
 
-            if (!followers.size && !following.size) {
+
+            if (
+                !followers.size &&
+                !following.size
+            ) {
 
                 summary.classList.remove("show");
 
+                summary.innerHTML = "";
+
                 return;
+
             }
 
 
+
             let content = "";
+
 
 
             if (followers.size) {
 
                 content +=
                     `<strong>${followers.size.toLocaleString()}</strong> followers imported`;
+
             }
 
 
-            if (followers.size && following.size) {
 
-                content += " &nbsp;·&nbsp; ";
+            if (
+                followers.size &&
+                following.size
+            ) {
+
+                content +=
+                    " &nbsp;·&nbsp; ";
+
             }
+
 
 
             if (following.size) {
 
                 content +=
                     `<strong>${following.size.toLocaleString()}</strong> following imported`;
+
             }
 
 
-            summary.innerHTML = content;
+
+            summary.innerHTML =
+                content;
+
 
             summary.classList.add("show");
+
         }
 
 
-        /* RANGE WARNING */
+
+        /* --------------------------
+           RANGE WARNING
+        -------------------------- */
 
         function updateRangeWarning() {
 
@@ -1882,111 +2862,183 @@
                     "rangeWarning"
                 );
 
+
             const text =
                 document.getElementById(
                     "rangeWarningText"
                 );
 
 
+
             suspiciousRange =
                 Boolean(
-                    followersInfo?.rangeLooksLimited ||
-                    followingInfo?.rangeLooksLimited
+
+                    followersInfo
+                        ?.rangeLooksLimited
+
+                    ||
+
+                    followingInfo
+                        ?.rangeLooksLimited
+
                 );
+
 
 
             if (!suspiciousRange) {
 
-                warning.classList.remove("show");
+                warning
+                    .classList
+                    .remove("show");
+
 
                 return;
+
             }
+
 
 
             text.textContent =
                 "This export looks like it may cover a limited date range. Limited exports can make the comparison inaccurate.";
 
 
+
             document
                 .getElementById("allTimeConfirm")
-                .checked = false;
+                .checked =
+                false;
 
 
-            warning.classList.add("show");
+
+            warning
+                .classList
+                .add("show");
+
         }
 
 
-        /* COMPARE */
+
+        /* --------------------------
+           COMPARE
+        -------------------------- */
 
         function compareLists() {
 
-            if (!followers.size || !following.size) {
+            if (
+                !followers.size ||
+                !following.size
+            ) {
 
                 alert(
                     "Upload both your Followers and Following files first ♡"
                 );
 
+
                 return;
+
             }
 
 
+
             if (
-                suspiciousRange &&
+
+                suspiciousRange
+
+                &&
+
                 !document
                     .getElementById("allTimeConfirm")
                     .checked
+
             ) {
 
                 alert(
-                    "Tiny check first ♡ Please confirm that you selected ALL TIME when downloading your Instagram data."
+                    "Tiny check first ♡ Please confirm that you selected ALL TIME when exporting your Instagram data."
                 );
+
+
 
                 document
                     .getElementById("rangeWarning")
                     .scrollIntoView({
+
                         behavior: "smooth",
                         block: "center"
+
                     });
 
+
                 return;
+
             }
 
 
+
             results.notBack =
+
                 [...following]
+
                     .filter(
+
                         username =>
                             !followers.has(username)
+
                     );
+
 
 
             results.dontFollow =
+
                 [...followers]
+
                     .filter(
+
                         username =>
                             !following.has(username)
+
                     );
+
 
 
             results.mutuals =
+
                 [...following]
+
                     .filter(
+
                         username =>
                             followers.has(username)
+
                     );
+
 
 
             updateCounts();
             updateComment();
 
 
-            activeTab = "notBack";
-            ascending = true;
+
+            activeTab =
+                "notBack";
+
+
+            ascending =
+                true;
+
+
+
+            document
+                .getElementById("sortButton")
+                .textContent =
+                "sort A–Z";
+
 
 
             document
                 .getElementById("searchInput")
-                .value = "";
+                .value =
+                "";
+
 
 
             document
@@ -1995,8 +3047,10 @@
                 `checked ${new Date().toLocaleString()}`;
 
 
+
             updateTabs();
             renderList();
+
 
 
             const overlay =
@@ -2005,27 +3059,45 @@
                 );
 
 
-            overlay.classList.add("show");
+
+            overlay
+                .classList
+                .add("show");
 
 
-            setTimeout(() => {
 
-                overlay.classList.remove("show");
-
-
-                document
-                    .getElementById("resultsSection")
-                    .classList.add("show");
+            setTimeout(
+                () => {
 
 
-                document
-                    .getElementById("resultsSection")
-                    .scrollIntoView({
-                        behavior: "smooth"
-                    });
+                    overlay
+                        .classList
+                        .remove("show");
 
-            }, 850);
+
+
+                    document
+                        .getElementById("resultsSection")
+                        .classList
+                        .add("show");
+
+
+
+                    document
+                        .getElementById("resultsSection")
+                        .scrollIntoView({
+
+                            behavior: "smooth"
+
+                        });
+
+
+                },
+                850
+            );
+
         }
+
 
 
         document
@@ -2036,22 +3108,40 @@
             );
 
 
+
+        /* --------------------------
+           RESULT COUNTS
+        -------------------------- */
+
         function updateCounts() {
 
-            document.getElementById("notBackCount")
+            document
+                .getElementById("notBackCount")
                 .textContent =
-                results.notBack.length.toLocaleString();
+                results.notBack
+                    .length
+                    .toLocaleString();
 
 
-            document.getElementById("dontFollowCount")
+
+            document
+                .getElementById("dontFollowCount")
                 .textContent =
-                results.dontFollow.length.toLocaleString();
+                results.dontFollow
+                    .length
+                    .toLocaleString();
 
 
-            document.getElementById("mutualCount")
+
+            document
+                .getElementById("mutualCount")
                 .textContent =
-                results.mutuals.length.toLocaleString();
+                results.mutuals
+                    .length
+                    .toLocaleString();
+
         }
+
 
 
         function updateComment() {
@@ -2060,7 +3150,8 @@
                 results.notBack.length;
 
 
-            let message;
+            let message = "";
+
 
 
             if (count === 0) {
@@ -2068,76 +3159,113 @@
                 message =
                     "suspiciously healthy social circle.";
 
-            } else if (count < 10) {
+            }
+
+            else if (count < 10) {
 
                 message =
                     "honestly? could be much worse.";
 
-            } else if (count < 50) {
+            }
+
+            else if (count < 50) {
 
                 message =
                     "a few conversations may be required.";
 
-            } else if (count < 150) {
+            }
+
+            else if (count < 150) {
 
                 message =
                     "we have some things to discuss.";
 
-            } else {
+            }
+
+            else {
 
                 message =
                     "oh babe. sit down.";
+
             }
+
 
 
             document
                 .getElementById("resultsComment")
                 .textContent =
                 message;
+
         }
 
 
-        /* TABS */
+
+        /* --------------------------
+           TABS
+        -------------------------- */
 
         document
             .querySelectorAll(".tab-button")
-            .forEach(button => {
-
-                button.addEventListener(
-                    "click",
-                    () => {
-
-                        activeTab =
-                            button.dataset.tab;
+            .forEach(
+                button => {
 
 
-                        document
-                            .getElementById("searchInput")
-                            .value = "";
+                    button
+                        .addEventListener(
+                            "click",
+                            () => {
 
 
-                        updateTabs();
-                        renderList();
-                    }
-                );
-            });
+                                activeTab =
+                                    button.dataset.tab;
+
+
+
+                                document
+                                    .getElementById("searchInput")
+                                    .value =
+                                    "";
+
+
+
+                                updateTabs();
+                                renderList();
+
+                            }
+                        );
+
+                }
+            );
+
 
 
         function updateTabs() {
 
             document
                 .querySelectorAll(".tab-button")
-                .forEach(button => {
+                .forEach(
+                    button => {
 
-                    button.classList.toggle(
-                        "active",
-                        button.dataset.tab === activeTab
-                    );
-                });
+
+                        button.classList.toggle(
+
+                            "active",
+
+                            button.dataset.tab ===
+                            activeTab
+
+                        );
+
+                    }
+                );
+
         }
 
 
-        /* LIST */
+
+        /* --------------------------
+           ACTIVE LIST
+        -------------------------- */
 
         function getActiveList() {
 
@@ -2145,12 +3273,19 @@
                 [...results[activeTab]];
 
 
+
             list.sort(
+
                 (a, b) =>
+
                     ascending
+
                         ? a.localeCompare(b)
+
                         : b.localeCompare(a)
+
             );
+
 
 
             const search =
@@ -2161,19 +3296,30 @@
                     .toLowerCase();
 
 
+
             if (search) {
 
                 list =
                     list.filter(
+
                         username =>
                             username.includes(search)
+
                     );
+
             }
 
 
+
             return list;
+
         }
 
+
+
+        /* --------------------------
+           RENDER LIST
+        -------------------------- */
 
         function renderList() {
 
@@ -2187,7 +3333,9 @@
 
                 mutuals:
                     "Mutuals"
+
             };
+
 
 
             const descriptions = {
@@ -2200,7 +3348,9 @@
 
                 mutuals:
                     "You follow each other. Peace has been restored."
+
             };
+
 
 
             document
@@ -2209,92 +3359,136 @@
                 titles[activeTab];
 
 
+
             document
                 .getElementById("listDescription")
                 .textContent =
                 descriptions[activeTab];
 
 
+
             const data =
                 getActiveList();
+
 
 
             document
                 .getElementById("searchCount")
                 .textContent =
-                `${data.length} of ${results[activeTab].length} shown`;
+
+                `${data.length.toLocaleString()} of ${results[activeTab].length.toLocaleString()} shown`;
+
 
 
             const container =
-                document.getElementById(
-                    "usernameList"
-                );
+                document
+                    .getElementById(
+                        "usernameList"
+                    );
 
 
-            container.innerHTML = "";
+
+            container.innerHTML =
+                "";
+
 
 
             if (!data.length) {
 
                 container.innerHTML =
-                    `<div class="empty-state">
+                    `
+                    <div class="empty-state">
                         nothing to report ♡
-                    </div>`;
+                    </div>
+                    `;
+
 
                 return;
+
             }
 
 
-            data.forEach(username => {
 
-                const row =
-                    document.createElement("div");
-
-
-                row.className =
-                    "user-row";
+            data.forEach(
+                username => {
 
 
-                const link =
-                    document.createElement("a");
+                    const row =
+                        document.createElement(
+                            "div"
+                        );
 
 
-                link.className =
-                    "user-link";
+                    row.className =
+                        "user-row";
 
 
-                link.href =
-                    `https://www.instagram.com/${encodeURIComponent(username)}/`;
+
+                    const link =
+                        document.createElement(
+                            "a"
+                        );
 
 
-                link.target = "_blank";
-
-                link.rel =
-                    "noopener noreferrer";
+                    link.className =
+                        "user-link";
 
 
-                const name =
-                    document.createElement("span");
+                    link.href =
+                        `https://www.instagram.com/${encodeURIComponent(username)}/`;
 
 
-                name.textContent =
-                    `@${username}`;
+                    link.target =
+                        "_blank";
 
 
-                const arrow =
-                    document.createElement("span");
+                    link.rel =
+                        "noopener noreferrer";
 
 
-                arrow.textContent = "↗";
+
+                    const name =
+                        document.createElement(
+                            "span"
+                        );
 
 
-                link.append(name, arrow);
+                    name.textContent =
+                        `@${username}`;
 
-                row.appendChild(link);
 
-                container.appendChild(row);
-            });
+
+                    const arrow =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    arrow.textContent =
+                        "↗";
+
+
+
+                    link.append(
+                        name,
+                        arrow
+                    );
+
+
+                    row.appendChild(
+                        link
+                    );
+
+
+                    container.appendChild(
+                        row
+                    );
+
+                }
+            );
+
         }
+
 
 
         document
@@ -2305,7 +3499,10 @@
             );
 
 
-        /* SORT */
+
+        /* --------------------------
+           SORT
+        -------------------------- */
 
         document
             .getElementById("sortButton")
@@ -2313,22 +3510,32 @@
                 "click",
                 event => {
 
+
                     ascending =
                         !ascending;
 
 
+
                     event.target.textContent =
+
                         ascending
+
                             ? "sort A–Z"
+
                             : "sort Z–A";
 
 
+
                     renderList();
+
                 }
             );
 
 
-        /* COPY */
+
+        /* --------------------------
+           COPY
+        -------------------------- */
 
         document
             .getElementById("copyButton")
@@ -2336,56 +3543,78 @@
                 "click",
                 async event => {
 
+
                     const data =
                         getActiveList();
 
 
-                    if (!data.length) return;
+
+                    if (!data.length) {
+                        return;
+                    }
+
 
 
                     const text =
+
                         data
+
                             .map(
                                 username =>
                                     `@${username}`
                             )
+
                             .join("\n");
 
 
+
                     try {
+
 
                         await navigator
                             .clipboard
                             .writeText(text);
 
 
+
                         const old =
                             event.target.textContent;
+
 
 
                         event.target.textContent =
                             "copied ♡";
 
 
+
                         setTimeout(
                             () => {
+
                                 event.target.textContent =
                                     old;
+
                             },
                             1200
                         );
 
-                    } catch {
+                    }
+
+                    catch (error) {
 
                         alert(
                             "Your browser blocked copying — use download list instead ♡"
                         );
+
                     }
+
                 }
             );
 
 
-        /* DOWNLOAD */
+
+        /* --------------------------
+           DOWNLOAD
+        -------------------------- */
 
         function downloadText(
             filename,
@@ -2394,41 +3623,66 @@
 
             const blob =
                 new Blob(
+
                     [text],
+
                     {
                         type:
                             "text/plain;charset=utf-8"
                     }
+
                 );
 
 
+
             const url =
-                URL.createObjectURL(blob);
+                URL.createObjectURL(
+                    blob
+                );
+
 
 
             const link =
-                document.createElement("a");
+                document.createElement(
+                    "a"
+                );
 
 
-            link.href = url;
+            link.href =
+                url;
+
 
             link.download =
                 filename;
 
 
-            document.body.appendChild(link);
+
+            document.body
+                .appendChild(
+                    link
+                );
+
 
             link.click();
+
 
             link.remove();
 
 
+
             setTimeout(
-                () =>
-                    URL.revokeObjectURL(url),
+                () => {
+
+                    URL.revokeObjectURL(
+                        url
+                    );
+
+                },
                 100
             );
+
         }
+
 
 
         document
@@ -2437,21 +3691,34 @@
                 "click",
                 () => {
 
+
                     const data =
                         getActiveList();
 
 
-                    if (!data.length) return;
+
+                    if (!data.length) {
+                        return;
+                    }
+
 
 
                     downloadText(
+
                         `${activeTab}-byselvi.txt`,
+
                         data
-                            .map(x => `@${x}`)
+                            .map(
+                                username =>
+                                    `@${username}`
+                            )
                             .join("\n")
+
                     );
+
                 }
             );
+
 
 
         document
@@ -2459,6 +3726,7 @@
             .addEventListener(
                 "click",
                 () => {
+
 
                     const content =
                         `FOLLOW CHECK — byselvi
@@ -2479,15 +3747,23 @@ ${results.mutuals.map(x => `@${x}`).join("\n")}
 `;
 
 
+
                     downloadText(
+
                         "follow-check-byselvi.txt",
+
                         content
+
                     );
+
                 }
             );
 
 
-        /* RESET */
+
+        /* --------------------------
+           RESET
+        -------------------------- */
 
         document
             .getElementById("newCheckButton")
@@ -2495,70 +3771,121 @@ ${results.mutuals.map(x => `@${x}`).join("\n")}
                 "click",
                 () => {
 
+
                     followers =
                         new Set();
+
 
                     following =
                         new Set();
 
-                    followersInfo = null;
-                    followingInfo = null;
 
-                    suspiciousRange = false;
+                    followersInfo =
+                        null;
+
+
+                    followingInfo =
+                        null;
+
+
+                    suspiciousRange =
+                        false;
+
 
 
                     results = {
+
                         notBack: [],
                         dontFollow: [],
                         mutuals: []
+
                     };
 
 
-                    document.getElementById("followersFile")
-                        .value = "";
 
-                    document.getElementById("followingFile")
-                        .value = "";
+                    document
+                        .getElementById("followersFile")
+                        .value =
+                        "";
 
 
-                    document.getElementById("followersStatus")
-                        .className =
+
+                    document
+                        .getElementById("followingFile")
+                        .value =
+                        "";
+
+
+
+                    const followersStatus =
+                        document
+                            .getElementById(
+                                "followersStatus"
+                            );
+
+
+                    const followingStatus =
+                        document
+                            .getElementById(
+                                "followingStatus"
+                            );
+
+
+
+                    followersStatus.className =
                         "file-status";
 
-                    document.getElementById("followersStatus")
-                        .textContent =
+
+                    followersStatus.textContent =
                         "waiting for evidence...";
 
 
-                    document.getElementById("followingStatus")
-                        .className =
+
+                    followingStatus.className =
                         "file-status";
 
-                    document.getElementById("followingStatus")
-                        .textContent =
+
+                    followingStatus.textContent =
                         "waiting for evidence...";
+
 
 
                     document
                         .getElementById("importSummary")
-                        .classList.remove("show");
+                        .classList
+                        .remove("show");
+
 
 
                     document
                         .getElementById("rangeWarning")
-                        .classList.remove("show");
+                        .classList
+                        .remove("show");
+
+
+
+                    document
+                        .getElementById("allTimeConfirm")
+                        .checked =
+                        false;
+
 
 
                     document
                         .getElementById("resultsSection")
-                        .classList.remove("show");
+                        .classList
+                        .remove("show");
+
 
 
                     document
                         .getElementById("checker")
                         .scrollIntoView({
+
                             behavior: "smooth"
+
                         });
+
                 }
             );
 
